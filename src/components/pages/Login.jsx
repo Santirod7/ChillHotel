@@ -16,7 +16,7 @@ const Login = ({setUsuarioLogueado}) => {
     if(login(data)){
       Swal.fire({
         title: "Bienvenido",
-        text: `Ingresaste al panel de administración de libreria101`,
+        text: `Este es tu panel de administración de Chill Hotel`,
         icon: "success",
       });
       setUsuarioLogueado(data.email)
