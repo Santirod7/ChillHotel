@@ -1,4 +1,5 @@
-const Error404 = () => {
+
+const RegistroUsuario = () => {
     return (
         <div>
             
@@ -6,4 +7,4 @@ const Error404 = () => {
     );
 };
 
-export default Error404;
+export default RegistroUsuario;
