@@ -15,7 +15,7 @@ function Nadvar() {
             <Nav.Link href="#ciudades">Ciudades</Nav.Link>
               <Nav.Link href="#nosotros">Sobre nosotros</Nav.Link>
               <Nav.Link href="#registro">
-                Registrarce
+                Registrarse
               </Nav.Link>     
               
           </Nav>
