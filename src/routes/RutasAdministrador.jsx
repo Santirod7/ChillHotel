@@ -1,5 +1,4 @@
 
-
 const RutasAdministrador = () => {
     return (
         <div>
