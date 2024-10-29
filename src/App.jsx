@@ -1,7 +1,7 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Nadvar from './nav'
-import Futer from './Footer'
+import Futer from './components/common/Footer'
 import Nosotros from './Nosotros'
 function App() {
 
