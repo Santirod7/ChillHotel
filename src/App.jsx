@@ -18,7 +18,7 @@ import Error404 from "./components/pages/Error404";
 
 
 function App() {
-  const usuario = JSON.parse(sessionStorage.getItem('Chill Hotel')) || "";
+  const usuario = JSON.parse(sessionStorage.getItem('ChillHotel')) || "";
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
 
   return (
