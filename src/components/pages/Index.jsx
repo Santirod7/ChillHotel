@@ -1,6 +1,40 @@
 import { Container, Row, Carousel, Button,Col,Card } from "react-bootstrap";
 import CatalogoHab from "./habitaciones/CatalogoHab.jsx";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 const Index = () => {
+  const hotels = [
+    {
+      image: 'https://via.placeholder.com/300x200?text=Hotel+1',
+      title: 'Hotel Maravilloso',
+      description: 'Disfruta de una estancia inolvidable en nuestro hotel de lujo.',
+    },
+    {
+      image: 'https://via.placeholder.com/300x200?text=Hotel+2',
+      title: 'Hotel Relax',
+      description: 'Un lugar ideal para relajarte y desconectar Con toda tu flia.',
+    },
+    {
+      image: 'https://via.placeholder.com/300x200?text=Hotel+3',
+      title: 'Hotel Axel',
+      description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
+    },
+    {
+      image: 'https://via.placeholder.com/300x200?text=Hotel+3',
+      title: 'Hotel Franco',
+      description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
+    },
+    {
+      image: 'https://via.placeholder.com/300x200?text=Hotel+3',
+      title: 'Hotel EZEQUIEL',
+      description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
+    },
+    {
+      image: 'https://via.placeholder.com/300x200?text=Hotel+3',
+      title: 'Hotel Valentin',
+      description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
+    },
+  ];
+
   return (
     <section className ='mainSeccion'>
       <div className="carousel-container">
@@ -44,13 +78,12 @@ const Index = () => {
       </Carousel>
       
     </div>
-   {/* pagos aceptados */}
 
-  
 
-      <Container className="mt-5">
-        <h1 className="display-4">Nuestras Habitaciones Disponibles</h1>
-        <hr />
+
+      <Container className="my-5">
+        <h1 className="display-4 text-white">Nuestras Habitaciones Disponibles</h1>
+        <hr className="border border-white"/>
 
         <Row>
           <CatalogoHab></CatalogoHab>
@@ -61,7 +94,55 @@ const Index = () => {
           <CatalogoHab></CatalogoHab>
           <CatalogoHab></CatalogoHab>
         </Row>
+       
+       {/* Poner ejemplos de mas buscados*/}
+        <h2 className="display-4 text-white">Lo Mas Buscado:</h2> <hr className="border border-white" />
+        <Carousel>
+      <Carousel.Item>
+        <Row className="d-flex justify-content-center">
+          {hotels.slice(0, 3).map((hotel, index) => (
+            <Col key={index} md={4}>
+              <Card className="mb-3">
+                <Card.Img variant="top" src={hotel.image} />
+                <Card.Body>
+                  <Card.Title>{hotel.title}</Card.Title>
+                  <Card.Text>{hotel.description}</Card.Text>
+                  <Button variant="primary">Ver más</Button>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Carousel.Item>
+
+      <Carousel.Item>
+        <Row className="d-flex justify-content-center">
+          {hotels.slice(3).map((hotel, index) => (
+            <Col key={index} md={4}>
+              <Card className="mb-3">
+                <Card.Img variant="top" src={hotel.image} />
+                <Card.Body>
+                  <Card.Title>{hotel.title}</Card.Title>
+                  <Card.Text>{hotel.description}</Card.Text>
+                  <Button variant="primary">Ver más</Button>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Carousel.Item>
+    </Carousel>
+
       </Container>
+
+     
+      
+       
+      
+    
+     
+
+
     </section>
   );
 };
