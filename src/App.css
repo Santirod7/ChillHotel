@@ -7,6 +7,12 @@
   }
   .mainSeccion {
     flex-grow: 1;
+    background-color: #06182f;
+background-image: linear-gradient(0deg, #06182f 0%, #E0C3FC 100%);
+
+    
+    
+
   }
   
 
@@ -22,3 +28,48 @@
     object-fit: cover;
   }
   
+
+  /* CARRUSELLL */
+
+
+  .carousel-container {
+    position: relative;
+  }
+  
+  .carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-caption {
+      font-size: 14px; /* Ajusta el tamaño de la fuente para pantallas pequeñas */
+    }
+  }
+
+  /* diseño pagos */
+
+  .payment-methods {
+    padding: 20px;
+    background-color: #f8f9fa; /* Color de fondo claro */
+    border-radius: 8px;
+  }
+  
+  .payment-methods h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .card {
+    border: 1px solid #dee2e6; /* Color del borde */
+    border-radius: 8px; /* Esquinas redondeadas */
+  }
+  
+  .card-img-top {
+    height: 100px; /* Altura de la imagen */
+    object-fit: contain; /* Ajustar la imagen */
+  }

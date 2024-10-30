@@ -6,7 +6,7 @@ import Menu from "./components/common/Menu";
 import Footer from "./components/common/Footer";
 import { useState } from "react";
 import Index from "./components/pages/Index";
-import CatalogoHab from "./components/pages/CatalogoHab";
+import CatalogoHab from "./components/pages/habitaciones/CatalogoHab";
 import Reservas from "./components/pages/Reservas";
 import Servicios from "./components/pages/Servicios";
 import RegistroUsuario from "./components/pages/RegistroUsuario";
