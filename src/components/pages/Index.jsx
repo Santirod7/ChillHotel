@@ -1,5 +1,6 @@
 import { Container, Row, Carousel, Button,Col,Card } from "react-bootstrap";
 import CatalogoHab from "./habitaciones/CatalogoHab.jsx";
+import ImagenMilitares from '../../assets/IndexFotos/travel.webp'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 const Index = () => {
   const hotels = [
@@ -54,7 +55,7 @@ const Index = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://ipt.imgix.net/205979/x/0/leonardopapera-horizontal-2.jpg"
+            src="https://wallpaperboat.com/wp-content/uploads/2019/11/horizontal-12.jpg"
             alt="Second slide"
           />
           <Carousel.Caption>
@@ -79,8 +80,6 @@ const Index = () => {
       
     </div>
 
-
-
       <Container className="my-5">
         <h1 className="display-4 text-white">Nuestras Habitaciones Disponibles</h1>
         <hr className="border border-white"/>
@@ -96,8 +95,8 @@ const Index = () => {
         </Row>
        
        {/* Poner ejemplos de mas buscados*/}
-        <h2 className="display-4 text-white">Lo Mas Buscado:</h2> <hr className="border border-white" />
-        <Carousel>
+        <h2 className="display-4 text-white">Lo Mas Buscado:</h2> <hr className="border" />
+    <Carousel>
       <Carousel.Item>
         <Row className="d-flex justify-content-center">
           {hotels.slice(0, 3).map((hotel, index) => (
@@ -132,6 +131,28 @@ const Index = () => {
         </Row>
       </Carousel.Item>
     </Carousel>
+     <hr className="border border-white"/>
+     
+
+       {/* ofertas  */}
+     <section className="rounded-5 py-3 px-3 bg-dark my-5 d-md-flex text-white justify-content-md-center  Alinear text-lg-start text-center ">
+       <div>
+        <p className="text-light-emphasis ">Viajes de las Fuerzas Americanas</p>
+         <h2 className="display-5 mb-3"><b>Ofertas de viajes para <br /> militares y veteranos</b></h2>
+         <p className="mb-4">AmericanForceTravel.com es el sitio oficial de viajes de ocio en línea <br />del Departamento de Defensa de Estados Unidos que ofrece ofertas <br />de viajes y beneficios exclusivos para militares, veteranos y civiles del <br />Departamento de Defensa.</p>
+         <Button variant="primary" className="mb-3">Reservar Ahora</Button>
+       </div>
+       <div className="ms-md-5">
+       <img
+            className="d-block w-100 rounded-5 "
+            src={ImagenMilitares}
+            alt="Second slide"
+          />
+       </div>
+      
+      
+     </section>
+     <hr className=" my-5 border border-white"/>
 
       </Container>
 
