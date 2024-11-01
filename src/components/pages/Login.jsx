@@ -2,7 +2,8 @@ import { Form, Button, Container, Card } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { login } from "../../helpers/queries";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const Login = ({setUsuarioLogueado}) => {
   const {
@@ -73,6 +74,9 @@ const Login = ({setUsuarioLogueado}) => {
             <Button variant="primary" type="submit">
               Ingresar
             </Button>
+            <div className="my-3 border border-bottom">
+            </div>
+            <Link></Link>
           </Form>
         </Card.Body>
       </Card>

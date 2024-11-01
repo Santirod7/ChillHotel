@@ -9,7 +9,7 @@ import Index from "./components/pages/Index";
 import CatalogoHab from "./components/pages/CatalogoHab";
 import Reservas from "./components/pages/Reservas";
 import Servicios from "./components/pages/Servicios";
-import RegistroUsuario from "./components/pages/RegistroUsuario";
+import Usuario from "./components/pages/Usuario"
 import RutasProtegidas from "./routes/RutasProtegidas";
 import RutasAdministrador from "./routes/RutasAdministrador";
 import Login from "./components/pages/Login";
@@ -26,13 +26,13 @@ function App() {
       <Menu
         usuarioLogueado={usuarioLogueado}
         setUsuarioLogueado={setUsuarioLogueado}
-      ></Menu>
+        ></Menu>
       <Routes>
         <Route path="/" element={<Index></Index>}></Route>
         <Route path="/catalogo" element={<CatalogoHab></CatalogoHab>}></Route>
         <Route path="/reservas" element={<Reservas></Reservas>}></Route>
         <Route path="/servicios" element={<Servicios></Servicios>}></Route>
-        <Route path="/registrarse" element={<RegistroUsuario></RegistroUsuario>}></Route>
+        <Route path="/registro" element={<Usuario></Usuario>}></Route>
         <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
         <Route
           exact

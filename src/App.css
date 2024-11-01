@@ -1,0 +1,18 @@
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mainSection{
+    flex-grow: 1;
+  }
+
+.bg-registro{
+    background-color: rgb(80, 89, 128);
+}
+.img-config{
+object-fit: cover;
+}
+
+
