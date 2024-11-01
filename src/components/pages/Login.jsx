@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { login } from "../../helpers/queries";
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
+import { GoogleLogin } from 'react-google-login';
 
 
 const Login = ({setUsuarioLogueado}) => {
@@ -30,10 +31,13 @@ const Login = ({setUsuarioLogueado}) => {
       });
     }
   };
+  const responseGoogle = (response) => {
+    console.log(response);
+  }
   return (
     <Container className="mainSection">
       <Card className="my-5">
-        <Card.Header as="h5">Login</Card.Header>
+        <Card.Header as="h5" className="text-center">Inicio de sesión</Card.Header>
         <Card.Body>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -60,7 +64,7 @@ const Login = ({setUsuarioLogueado}) => {
                 type="password"
                 placeholder="Password"
                 {...register("password", {
-                    required: "El nombre de password es obligatorio",
+                    required: "El  password es obligatorio",
                     pattern: {
                       value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
                       message: "El password debe contener al menos una letra mayúscula, una letra minúscula y un número",
@@ -76,7 +80,14 @@ const Login = ({setUsuarioLogueado}) => {
             </Button>
             <div className="my-3 border border-bottom">
             </div>
-            <Link></Link>
+            <GoogleLogin
+            className="text-center"
+    clientId="650752236712-lhlpdbl32pop9e5i5jom3vhnh4p211gu.apps.googleusercontent.com"
+    buttonText="Iniciar Sesion con Google"
+    onSuccess={responseGoogle}
+    onFailure={responseGoogle}
+    cookiePolicy={'single_host_origin'}
+  />
           </Form>
         </Card.Body>
       </Card>

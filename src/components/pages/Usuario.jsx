@@ -29,7 +29,7 @@ const Usuario = () => {
             <div className='col-12 col-lg-5'>
               <div className='row'>
 <div className='col-12 text-center mt-5'>
-  <Button className='btn btn-outline-info' onClick={()=>formularioRegistro()} >Registrarse</Button>
+  <Button className='btn btn-outline-light' onClick={()=>formularioRegistro()} >Registrarse</Button>
   <Button className='btn btn-outline-info' onClick={()=>formularioLogin()}>Iniciar sesión</Button>
 </div>
           <div className=' col-12'>
