@@ -1,12 +1,15 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { Form, Button, Container, Card } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { login } from "../../helpers/queries";
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
-import { GoogleLogin } from 'react-google-login';
-
+import { GoogleLogin } from '@react-oauth/google';
 
 const Login = ({setUsuarioLogueado}) => {
+
+
   const {
     register,
     handleSubmit,
@@ -31,15 +34,14 @@ const Login = ({setUsuarioLogueado}) => {
       });
     }
   };
-  const responseGoogle = (response) => {
-    console.log(response);
-  }
+  
   return (
-    <Container className="mainSection">
+    <article className="w-100">
+    <Container>
       <Card className="my-5">
         <Card.Header as="h5" className="text-center">Inicio de sesión</Card.Header>
         <Card.Body>
-          <Form onSubmit={handleSubmit(onSubmit)}>
+          <Form className="container" onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control
@@ -80,18 +82,28 @@ const Login = ({setUsuarioLogueado}) => {
             </Button>
             <div className="my-3 border border-bottom">
             </div>
-            <GoogleLogin
-            className="text-center"
-    clientId="650752236712-lhlpdbl32pop9e5i5jom3vhnh4p211gu.apps.googleusercontent.com"
-    buttonText="Iniciar Sesion con Google"
-    onSuccess={responseGoogle}
-    onFailure={responseGoogle}
-    cookiePolicy={'single_host_origin'}
-  />
+            <div className="d-flex w-100">
+  <GoogleLogin className="ps-auto"
+  onSuccess={credentialResponse => {
+    Swal.fire({
+      title: "Bienvenido",
+      text: `Ingresaste exitosamente al Chill World`,
+      icon: "success",
+    })
+  }}
+  onError={() => {
+    Swal.fire({
+      title: "Ocurrio un error",
+      text: `Lo sentimos, en estos momentos no puede iniciar sesion desde aqui`,
+      icon: "error",
+  })}}
+/>
+            </div>
           </Form>
         </Card.Body>
       </Card>
     </Container>
+    </article>
   );
 };
 

@@ -4,9 +4,18 @@ import imagenRegistro from '../../assets/imagenRegistro.jpg'
 import FormularioRegistro from './FormularioRegistro';
 import Login from './Login';
 import { useEffect, useState } from 'react';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import ToggleButton from 'react-bootstrap/ToggleButton';
 
 const Usuario = () => { 
   const [registro, setRegistro] = useState(true)
+
+  const [radioValue, setRadioValue] = useState('1');
+
+  const radios = [
+    { name: 'Registrarse', value: '1' },
+    { name: 'Iniciar sesión', value: '2' },
+  ];
 
   useEffect(()=>{
   },[])
@@ -21,16 +30,28 @@ const Usuario = () => {
 
 
   return (
-        <section className='bg-registro mainSection'>
-            <div className='row mx-0 justify-content-center'>
-            <div className='col-12 col-lg-7 px-0'>
-<img src={imagenRegistro} alt="" className='w-100 h-100 img-config' />
-            </div>
-            <div className='col-12 col-lg-5'>
+        <section className=' mainSection img-fondo-login'>
+            <div className='row mx-0 justify-content-center h-100'>
+            <div className='col-10 col-md-6 col-lg-5 align-content-center'>
               <div className='row'>
-<div className='col-12 text-center mt-5'>
-  <Button className='btn btn-outline-light' onClick={()=>formularioRegistro()} >Registrarse</Button>
-  <Button className='btn btn-outline-info' onClick={()=>formularioLogin()}>Iniciar sesión</Button>
+<div className='col-12 text-center mt-5 align-content-center'>
+<ButtonGroup>
+        {radios.map((radio, idx) => (
+          <ToggleButton
+            key={idx}
+            id={`registro-${idx}`}
+            type="radio"
+            variant={idx % 2 ? 'info' : 'light'}
+            name="radio"
+            value={radio.value}
+            checked={radioValue === radio.value}
+            onClick={idx % 2 ? (()=>formularioLogin()) : (()=>formularioRegistro())}
+            onChange={(e) => setRadioValue(e.currentTarget.value)}
+          >
+            {radio.name}
+          </ToggleButton>
+        ))}
+      </ButtonGroup>
 </div>
           <div className=' col-12'>
             {registro === true ? (<FormularioRegistro></FormularioRegistro>):(<Login></Login>)

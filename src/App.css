@@ -11,8 +11,20 @@
 .bg-registro{
     background-color: rgb(80, 89, 128);
 }
-.img-config{
-object-fit: cover;
+.img-fondo-login{
+  background-image: url("./assets/imagenRegistro.jpg");
+  background-position: center;
+  background-size: cover;
 }
+@media (min-width: 992px) {
+  .img-fondo-login{
+   height: 800px;
+  }
+ }
+@media (min-width: 0px) {
+  .img-fondo-login{
+   height: 780px;
+  }
+ }
 
 
