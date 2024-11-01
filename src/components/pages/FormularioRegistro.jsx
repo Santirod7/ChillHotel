@@ -6,8 +6,10 @@ const FormularioRegistro = () => {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm();
+
   return (
     <article className="w-100">
       <Card className="my-5">
@@ -30,8 +32,8 @@ const FormularioRegistro = () => {
                   },
                 })}
               />
-              <Form.Text className="text-muted">
-                No compartiremos su email con nadie
+              <Form.Text className="text-danger">
+              {errors.email?.message}
               </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formnombreUsuario">
@@ -54,6 +56,9 @@ const FormularioRegistro = () => {
                 })}
               />
             </Form.Group>
+            <Form.Text className="text-danger">
+              {errors.nombreUsuario?.message}
+              </Form.Text>
             <div className="row">
               <div className="col-6">
                 <Form.Group className="mb-3" controlId="formNombre">
@@ -61,7 +66,7 @@ const FormularioRegistro = () => {
                   <Form.Control
                     type="text"
                     placeholder="Ej. Carlos"
-                    {...register("Nombre", {
+                    {...register("nombre", {
                       required: "El nombre es obligatorio",
                       minLength: {
                         value: 3,
@@ -74,6 +79,9 @@ const FormularioRegistro = () => {
                     })}
                   />
                 </Form.Group>
+                <Form.Text className="text-danger">
+              {errors.nombre?.message}
+              </Form.Text>
               </div>
               <div className="col-6">
                 <Form.Group className="mb-3" controlId="formApellido">
@@ -81,7 +89,7 @@ const FormularioRegistro = () => {
                   <Form.Control
                     type="text"
                     placeholder="Ej. Caravajal"
-                    {...register("Apellido", {
+                    {...register("apellido", {
                       required: "El apellido es obligatorio",
                       minLength: {
                         value: 3,
@@ -94,11 +102,16 @@ const FormularioRegistro = () => {
                     })}
                   />
                 </Form.Group>
+                <Form.Text className="text-danger">
+              {errors.apellido?.message}
+              </Form.Text>
               </div>
             </div>
             <Form.Group className="mb-3" controlId="formNacionalidad">
               <Form.Label>Nacionalidad</Form.Label>
-              <Form.Select aria-label="Selector">
+              <Form.Select aria-label="Selector" {...register("selector", {
+                      required: "La nacionalidad es requerida",
+                      })}>
                 <option>Seleccione su nacionalidad</option>
                 <option value="1">Argentina</option>
                 <option value="2">Chile</option>
@@ -122,21 +135,30 @@ const FormularioRegistro = () => {
                 })}
               />
             </Form.Group>
+            <Form.Text className="text-danger">
+                {errors.password?.message}
+              </Form.Text>
             <Form.Group className="mb-3" controlId="formBasicRepeatPassword">
               <Form.Label>Repetir Password</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="Repetir Password"
-                {...register("password", {
-                  required: "El nombre de password es obligatorio",
+                {...register("repeatPassword", {
+                  required: "Repetir password es obligatorio",
                   pattern: {
                     value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
                     message:
-                      "El password debe contener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número",
+                      "Los passwords no coinciden",
                   },
                 })}
               />
             </Form.Group>
+            {setValue('password') === setValue('repeatPassword') ? (<Form.Text className="text-success">
+                    Los passwords coinciden
+                    </Form.Text>) : (<Form.Text className="text-danger">
+                    {errors.repeatPassword?.message}
+                    </Form.Text>)
+                }
             <Form.Group className="mb-3 d-flex" controlId="formBasicCheckbox">
               <Form.Check type="checkbox" />
               <Form.Label className="ms-2">
