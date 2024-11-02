@@ -1,43 +1,43 @@
 import { Container, Row, Carousel, Button,Col,Card } from "react-bootstrap";
 import CatalogoHab from "./habitaciones/CatalogoHab.jsx";
 import ImagenMilitares from '../../assets/IndexFotos/travel.webp'
-// import 'bootstrap/dist/css/bootstrap.min.css';
+ import 'bootstrap/dist/css/bootstrap.min.css';
 const Index = () => {
-  const hotels = [
-    {
-      image: 'https://via.placeholder.com/300x200?text=Hotel+1',
-      title: 'Hotel Maravilloso',
-      description: 'Disfruta de una estancia inolvidable en nuestro hotel de lujo.',
-    },
-    {
-      image: 'https://via.placeholder.com/300x200?text=Hotel+2',
-      title: 'Hotel Relax',
-      description: 'Un lugar ideal para relajarte y desconectar Con toda tu flia.',
-    },
-    {
-      image: 'https://via.placeholder.com/300x200?text=Hotel+3',
-      title: 'Hotel Axel',
-      description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
-    },
-    {
-      image: 'https://via.placeholder.com/300x200?text=Hotel+3',
-      title: 'Hotel Franco',
-      description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
-    },
-    {
-      image: 'https://via.placeholder.com/300x200?text=Hotel+3',
-      title: 'Hotel EZEQUIEL',
-      description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
-    },
-    {
-      image: 'https://via.placeholder.com/300x200?text=Hotel+3',
-      title: 'Hotel Valentin',
-      description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
-    },
-  ];
+  // const hotels = [
+  //   {
+  //     image: 'https://via.placeholder.com/300x200?text=Hotel+1',
+  //     title: 'Hotel Maravilloso',
+  //     description: 'Disfruta de una estancia inolvidable en nuestro hotel de lujo.',
+  //   },
+  //   {
+  //     image: 'https://via.placeholder.com/300x200?text=Hotel+2',
+  //     title: 'Hotel Relax',
+  //     description: 'Un lugar ideal para relajarte y desconectar Con toda tu flia.',
+  //   },
+  //   {
+  //     image: 'https://via.placeholder.com/300x200?text=Hotel+3',
+  //     title: 'Hotel Axel',
+  //     description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
+  //   },
+  //   {
+  //     image: 'https://via.placeholder.com/300x200?text=Hotel+3',
+  //     title: 'Hotel Franco',
+  //     description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
+  //   },
+  //   {
+  //     image: 'https://via.placeholder.com/300x200?text=Hotel+3',
+  //     title: 'Hotel EZEQUIEL',
+  //     description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
+  //   },
+  //   {
+  //     image: 'https://via.placeholder.com/300x200?text=Hotel+3',
+  //     title: 'Hotel Valentin',
+  //     description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
+  //   },
+  // ];
 
   return (
-    <section className ='mainSeccion'>
+    <section className ='PrincipalIndex'>
       <div className="carousel-container">
       <Carousel>
         <Carousel.Item>
@@ -85,17 +85,13 @@ const Index = () => {
         <hr className="border border-white"/>
 
         <Row>
-          <CatalogoHab></CatalogoHab>
-          <CatalogoHab></CatalogoHab>
-          <CatalogoHab></CatalogoHab>
-          <CatalogoHab></CatalogoHab>
-          <CatalogoHab></CatalogoHab>
-          <CatalogoHab></CatalogoHab>
-          <CatalogoHab></CatalogoHab>
+          <CatalogoHab></CatalogoHab>   
         </Row>
        
        {/* Poner ejemplos de mas buscados*/}
-        <h2 className="display-4 text-white">Lo Mas Buscado:</h2> <hr className="border" />
+
+       
+        {/* <h2 className="display-4 text-white">Lo Mas Buscado:</h2> <hr className="border" />
     <Carousel>
       <Carousel.Item>
         <Row className="d-flex justify-content-center">
@@ -131,11 +127,11 @@ const Index = () => {
         </Row>
       </Carousel.Item>
     </Carousel>
-     <hr className="border border-white"/>
+     <hr className="border border-white"/> */}
      
 
        {/* ofertas  */}
-     <section className="rounded-5 py-3 px-3 bg-dark my-5 d-md-flex text-white justify-content-md-center  Alinear text-lg-start text-center ">
+     {/* <section className="rounded-5 py-3 px-3 bg-dark my-5 d-md-flex text-white justify-content-md-center  Alinear text-lg-start text-center ">
        <div>
         <p className="text-light-emphasis ">Viajes de las Fuerzas Americanas</p>
          <h2 className="display-5 mb-3"><b>Ofertas de viajes para <br /> militares y veteranos</b></h2>
@@ -152,7 +148,8 @@ const Index = () => {
       
       
      </section>
-     <hr className=" my-5 border border-white"/>
+     <hr className=" my-5 border border-white"/> */}
+
 
       </Container>
 

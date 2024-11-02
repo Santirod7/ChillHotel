@@ -1,8 +1,11 @@
+import { Button } from "react-bootstrap";
+import error from "../../assets/IndexFotos/error.png"
 const Error404 = () => {
     return (
-        <div>
-            <h1>Error 404</h1>
-        </div>
+        <section className=" container text-center mt-4"> 
+        <img src={error} alt="error404" className="w-100 "/>  
+       <Button className='my-5' variant="warning">Volver al inicio</Button>
+   </section>
     );
 };
 

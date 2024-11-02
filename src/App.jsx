@@ -4,16 +4,16 @@ import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import Menu from "./components/common/Menu";
 import Footer from "./components/common/Footer";
-import { useState } from "react";
 import Index from "./components/pages/Index";
-import CatalogoHab from "./components/pages/habitaciones/CatalogoHab";
-import Reservas from "./components/pages/Reservas";
-import Servicios from "./components/pages/Servicios";
-import RegistroUsuario from "./components/pages/RegistroUsuario";
-import RutasProtegidas from "./routes/RutasProtegidas";
-import RutasAdministrador from "./routes/RutasAdministrador";
-import Login from "./components/pages/Login";
+// import Administrador from "./components/pages/Administrador";
+// import FormularioHabitaciones from "./components/pages/habitaciones/FormularioHabitaciones";
 import Error404 from "./components/pages/Error404";
+import CatalogoHab from "./components/pages/habitaciones/CatalogoHab";
+import { useState } from "react";
+import RutasProtegidas from "./routes/RutasProtegidas";
+import RutasAdmin from "./routes/RutasAdministrador";
+import Login from "./components/pages/Login";
+
 
 
 
@@ -29,21 +29,22 @@ function App() {
       ></Menu>
       <Routes>
         <Route path="/" element={<Index></Index>}></Route>
-        <Route path="/catalogo" element={<CatalogoHab></CatalogoHab>}></Route>
-        <Route path="/reservas" element={<Reservas></Reservas>}></Route>
-        <Route path="/servicios" element={<Servicios></Servicios>}></Route>
-        <Route path="/registrarse" element={<RegistroUsuario></RegistroUsuario>}></Route>
-        <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
         <Route
+          exact
+          path="/login"
+          element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}
+        ></Route>
+         <Route
           exact
           path="/administrador/*"
           element={
           <RutasProtegidas>
-            <RutasAdministrador></RutasAdministrador>
+            <RutasAdmin></RutasAdmin>
           </RutasProtegidas>}
         ></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
+     
       <Footer></Footer>
     </BrowserRouter>
   );

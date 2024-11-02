@@ -1,6 +1,13 @@
 import { Col, Card, Button } from "react-bootstrap";
 
 const CatalogoHab = () => {
+  
+  
+  
+  
+  
+  
+  
   return (
     <Col md={4} lg={4} className="mb-3">
       <Card className="h-100 border border-3 border-secondary-subtle">
