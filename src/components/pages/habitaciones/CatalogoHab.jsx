@@ -1,6 +1,6 @@
 import { Col, Card, Button } from "react-bootstrap";
 
-const CatalogoHab = () => {
+const CatalogoHab = ({habitaciones2,setHabitaciones}) => {
   
   
   
@@ -13,18 +13,17 @@ const CatalogoHab = () => {
       <Card className="h-100 border border-3 border-secondary-subtle">
         <div>
           <img
-            src="https://th.bing.com/th/id/R.0d426cb813f8c9c5994c3cab197ceff4?rik=%2fFK%2ff5cIRe7oYw&pid=ImgRaw&r=0"
+            src={habitaciones2.imagen}
             alt="cafe"
             className="card-img-top-nueva"
           />
         </div>
         <Card.Body >
-          <Card.Title className="primary-font">Habitacion</Card.Title>
+          <Card.Title className="primary-font">{habitaciones2.tipoHabitacion}</Card.Title>
           <Card.Text>
-            <span className="fw-bold">Precio: $20000</span> <br />
-            <span className="fw-bold">Num de Hab:10</span> <br />
-            Descripción:4 habitaciones .
-            <br className="mb-2" />
+            <span className="fw-bold">Disponibilidad:</span> {habitaciones2.disponibilidad} <br />
+            <span className="fw-bold">Numero De Habitacion: </span>{habitaciones2.numHabitacion} <br />
+            <span className="fw-bold">Descripcion:</span>{habitaciones2.descripcion_breve}
           </Card.Text>
         </Card.Body>
         <Card.Footer className="text-end">

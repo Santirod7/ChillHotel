@@ -2,6 +2,10 @@ import { Container, Row, Carousel, Button,Col,Card } from "react-bootstrap";
 import CatalogoHab from "./habitaciones/CatalogoHab.jsx";
 import ImagenMilitares from '../../assets/IndexFotos/travel.webp'
  import 'bootstrap/dist/css/bootstrap.min.css';
+ import { useEffect, useState } from "react";
+import { leerHabitacionesAPI,URLHabitaciones } from "../../helpers/queries.js";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2"
 const Index = () => {
   // const hotels = [
   //   {
@@ -35,6 +39,37 @@ const Index = () => {
   //     description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
   //   },
   // ];
+
+  const [habitaciones2,setHabitaciones] = useState([])
+
+
+  useEffect(()=>{
+  recibirHabitaciones();
+  },[])
+  
+  const recibirHabitaciones= async ()=>{
+  
+    const respuesta = await leerHabitacionesAPI();
+    if(respuesta.status===200){
+  
+    const datos = await respuesta.json();
+    setHabitaciones(datos);
+    }else{
+  
+      Swal.fire({
+        title:"ocurrio un error ",
+         text:`no se pudo obtener el listado de Habitaciones,intente en unos minutos..`,
+         icon:"error"
+        });
+  
+    }
+  
+  
+  }
+
+
+
+
 
   return (
     <section className ='PrincipalIndex'>
@@ -83,9 +118,13 @@ const Index = () => {
       <Container className="my-5">
         <h1 className="display-4 text-white">Nuestras Habitaciones Disponibles</h1>
         <hr className="border border-white"/>
-
+           
         <Row>
-          <CatalogoHab></CatalogoHab>   
+        {
+              habitaciones2.map((habitaciones2)=> <CatalogoHab key={habitaciones2.id} habitaciones2={habitaciones2}  setHabitaciones={setHabitaciones}></CatalogoHab>)
+            
+            }
+             
         </Row>
        
        {/* Poner ejemplos de mas buscados*/}

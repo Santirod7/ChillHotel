@@ -2,16 +2,6 @@
   "habitaciones": [
     {
       "numHabitacion": "101",
-      "tipoHabitacion": "Ejecutiva312",
-      "disponibilidad": "Disponibilidad",
-      "precio": "500",
-      "imagen": "https://cdn.forbes.co/2020/02/sofitel-legend-santa-clara-outdoor-pool.jpg",
-      "descripcion_breve": "cuenta con una cama tamaño queen o king, 212",
-      "descripcion_amplia": "Generalmente cuenta con una cama tamaño queen o king, un escritorio amplio con buena iluminación, y sillas ergonómicas. Los servicios incluyen acceso a Wi-Fi de alta velocidad, una televisión de pantalla plana, minibar y, a menudo, un baño privado con amenities de calidad. La decoración suele ser elegante y moderna, creando un ambiente profesional y acogedor. Algunos hoteles también ofrecen acceso a salas de reuniones o áreas de trabajo compartidas",
-      "id": 123
-    },
-    {
-      "numHabitacion": "101",
       "tipoHabitacion": "Ejecutivaaa",
       "disponibilidad": "Disponibilidad",
       "precio": "5000",
