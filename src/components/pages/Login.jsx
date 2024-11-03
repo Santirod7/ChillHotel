@@ -30,7 +30,9 @@ const Login = ({setUsuarioLogueado}) => {
     }
   };
   return (
-    <Container className="FormularioIndex">
+    <section className="PrincipalIndex">
+
+<Container >
       <Card className="my-5">
         <Card.Header as="h5">Login</Card.Header>
         <Card.Body>
@@ -77,6 +79,8 @@ const Login = ({setUsuarioLogueado}) => {
         </Card.Body>
       </Card>
     </Container>
+    </section>
+    
   );
 };
 

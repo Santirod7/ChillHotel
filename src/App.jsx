@@ -5,6 +5,8 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import Menu from "./components/common/Menu";
 import Footer from "./components/common/Footer";
 import Index from "./components/pages/Index";
+import QuienesSomos from "./components/pages/QuienesSomos";
+import Contactanos from "./components/pages/Contactanos";
 // import Administrador from "./components/pages/Administrador";
 // import FormularioHabitaciones from "./components/pages/habitaciones/FormularioHabitaciones";
 import Error404 from "./components/pages/Error404";
@@ -29,6 +31,8 @@ function App() {
       ></Menu>
       <Routes>
         <Route path="/" element={<Index></Index>}></Route>
+        <Route path="/QuienesSomos" element={<QuienesSomos></QuienesSomos>}></Route>
+        <Route path="/Contactanos" element={<Contactanos></Contactanos>}></Route>
         <Route
           exact
           path="/login"

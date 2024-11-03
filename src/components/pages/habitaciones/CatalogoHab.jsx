@@ -1,6 +1,6 @@
 import { Col, Card, Button } from "react-bootstrap";
 
-const CatalogoHab = ({habitaciones2,setHabitaciones}) => {
+const CatalogoHab = ({habitaciones2}) => {
   
   
   
@@ -28,7 +28,7 @@ const CatalogoHab = ({habitaciones2,setHabitaciones}) => {
         </Card.Body>
         <Card.Footer className="text-end">
           <Button className="btn btn-secondary me-2 border-3 border-black" to="*">
-            Ver más
+            Mas Detalles
           </Button>
         </Card.Footer>
       </Card>

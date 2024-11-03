@@ -28,6 +28,9 @@ const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
          
         <Nav className="ms-auto">
             <NavLink end to='/' className='nav-link'>Inicio</NavLink>
+            <NavLink end to='/QuienesSomos' className='nav-link'>¿Quienes Somos?</NavLink>
+            <NavLink end to='/Contactanos' className='nav-link'>Contactanos</NavLink>
+
             {
               usuarioLogueado !== ""?(
                 <>

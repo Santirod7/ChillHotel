@@ -1,44 +1,44 @@
 import { Container, Row, Carousel, Button,Col,Card } from "react-bootstrap";
 import CatalogoHab from "./habitaciones/CatalogoHab.jsx";
-import ImagenMilitares from '../../assets/IndexFotos/travel.webp'
+import ImagenDisney from '../../assets/IndexFotos/disney.webp'
  import 'bootstrap/dist/css/bootstrap.min.css';
  import { useEffect, useState } from "react";
 import { leerHabitacionesAPI,URLHabitaciones } from "../../helpers/queries.js";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2"
 const Index = () => {
-  // const hotels = [
-  //   {
-  //     image: 'https://via.placeholder.com/300x200?text=Hotel+1',
-  //     title: 'Hotel Maravilloso',
-  //     description: 'Disfruta de una estancia inolvidable en nuestro hotel de lujo.',
-  //   },
-  //   {
-  //     image: 'https://via.placeholder.com/300x200?text=Hotel+2',
-  //     title: 'Hotel Relax',
-  //     description: 'Un lugar ideal para relajarte y desconectar Con toda tu flia.',
-  //   },
-  //   {
-  //     image: 'https://via.placeholder.com/300x200?text=Hotel+3',
-  //     title: 'Hotel Axel',
-  //     description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
-  //   },
-  //   {
-  //     image: 'https://via.placeholder.com/300x200?text=Hotel+3',
-  //     title: 'Hotel Franco',
-  //     description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
-  //   },
-  //   {
-  //     image: 'https://via.placeholder.com/300x200?text=Hotel+3',
-  //     title: 'Hotel EZEQUIEL',
-  //     description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
-  //   },
-  //   {
-  //     image: 'https://via.placeholder.com/300x200?text=Hotel+3',
-  //     title: 'Hotel Valentin',
-  //     description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
-  //   },
-  // ];
+  const hotels = [
+    {
+      image: 'https://via.placeholder.com/300x200?text=Hotel+1',
+      title: 'Hotel Maravilloso',
+      description: 'Disfruta de una estancia inolvidable en nuestro hotel de lujo.',
+    },
+    {
+      image: 'https://via.placeholder.com/300x200?text=Hotel+2',
+      title: 'Hotel Relax',
+      description: 'Un lugar ideal para relajarte y desconectar Con toda tu flia.',
+    },
+    {
+      image: 'https://via.placeholder.com/300x200?text=Hotel+3',
+      title: 'Hotel Axel',
+      description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
+    },
+    {
+      image: 'https://via.placeholder.com/300x200?text=Hotel+3',
+      title: 'Hotel Franco',
+      description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
+    },
+    {
+      image: 'https://via.placeholder.com/300x200?text=Hotel+3',
+      title: 'Hotel EZEQUIEL',
+      description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
+    },
+    {
+      image: 'https://via.placeholder.com/300x200?text=Hotel+3',
+      title: 'Hotel Valentin',
+      description: 'Vive la aventura en nuestro hotel rodeado de naturaleza.',
+    },
+  ];
 
   const [habitaciones2,setHabitaciones] = useState([])
 
@@ -129,8 +129,8 @@ const Index = () => {
        
        {/* Poner ejemplos de mas buscados*/}
 
-       
-        {/* <h2 className="display-4 text-white">Lo Mas Buscado:</h2> <hr className="border" />
+      
+         <h2 className="display-4 text-white">Lo Mas Buscado:</h2> <hr className="border" />
     <Carousel>
       <Carousel.Item>
         <Row className="d-flex justify-content-center">
@@ -166,28 +166,28 @@ const Index = () => {
         </Row>
       </Carousel.Item>
     </Carousel>
-     <hr className="border border-white"/> */}
+     <hr className="border border-white"/> 
      
 
        {/* ofertas  */}
-     {/* <section className="rounded-5 py-3 px-3 bg-dark my-5 d-md-flex text-white justify-content-md-center  Alinear text-lg-start text-center ">
+      <section className="rounded-5 py-3 px-3 bg-dark my-5 d-md-flex text-white justify-content-md-center  Alinear text-lg-start text-center ">
        <div>
-        <p className="text-light-emphasis ">Viajes de las Fuerzas Americanas</p>
-         <h2 className="display-5 mb-3"><b>Ofertas de viajes para <br /> militares y veteranos</b></h2>
-         <p className="mb-4">AmericanForceTravel.com es el sitio oficial de viajes de ocio en línea <br />del Departamento de Defensa de Estados Unidos que ofrece ofertas <br />de viajes y beneficios exclusivos para militares, veteranos y civiles del <br />Departamento de Defensa.</p>
-         <Button variant="primary" className="mb-3">Reservar Ahora</Button>
+        <p className="text-light-emphasis ">VACACIONES DE WALT DISNEY WORLD</p>
+         <h2 className="display-5 mb-3"><b>¡Ahorre en sus vacaciones <br /> en Walt Disney World!</b></h2>
+         <p className="mb-4">Ahorre hasta un 25% en habitaciones en hoteles selectos de Disney <br />para estadías la mayoría de las noches 2/23-4/30/25. Además, otros<br />ahorros para estadías la mayoría de las noches de domingo a jueves <br />1/1-2/20/25*.</p>
+        <a href="./Error404.jsx"><Button variant="primary" className="mb-3">Reservar Ahora</Button></a> 
        </div>
        <div className="ms-md-5">
        <img
             className="d-block w-100 rounded-5 "
-            src={ImagenMilitares}
+            src={ImagenDisney}
             alt="Second slide"
           />
        </div>
       
       
      </section>
-     <hr className=" my-5 border border-white"/> */}
+     <hr className=" my-5 border border-white"/>
 
 
       </Container>
