@@ -2,23 +2,41 @@
   "habitaciones": [
     {
       "numHabitacion": "101",
-      "tipoHabitacion": "Ejecutivaaa",
-      "disponibilidad": "Disponibilidad",
+      "tipoHabitacion": "Duplex",
+      "disponibilidad": "lunes-domingo",
       "precio": "5000",
-      "imagen": "https://cdn.photographylife.com/wp-content/uploads/2018/11/Moeraki-Boulders-New-Zealand.jpg",
-      "descripcion_breve": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "descripcion_amplia": "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+      "imagen": "https://webbox.imgix.net/images/sxiboboyeainzeaw/2bed9e0f-e9f5-46ef-b85d-216dfad164d7.jpg?auto=format,compress&fit=crop&crop=entropy",
+      "descripcion_breve": "se caracteriza por tener dos niveles o pisos conectados por una escalera interna. Este diseño permite una distribución más amplia del espacio e incluye áreas separadas para dormir y relajarse.",
+      "descripcion_amplia": "se caracteriza por tener dos niveles o pisos conectados por una escalera interna. Este diseño permite una distribución más amplia del espacio y a menudo incluye áreas separadas para dormir y relajarse.",
       "id": 124
     },
     {
       "numHabitacion": "100",
       "tipoHabitacion": "Matrimonial",
       "disponibilidad": "lunes y viernes",
-      "precio": "1000",
-      "imagen": "https://cdn.photographylife.com/wp-content/uploads/2018/11/Moeraki-Boulders-New-Zealand.jpg",
-      "descripcion_breve": "asdsacscdfavvdvfadddddddddddddddddddddddd",
-      "descripcion_amplia": "vaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaf",
+      "precio": "10001",
+      "imagen": "https://www.elmueble.com/medio/2023/05/19/dormitorio-de-matrimonio-moderno-revestido-de-papel-pintado-gris-y-mesillas-voladas-en-beige_00000000_7d246776_230519144442_900x900.jpg",
+      "descripcion_breve": " cuenta con una cama matrimonial amplia, decoraciones suaves y acogedoras, como cortinas y alfombras que aportan calidez. Puede incluir muebles como mesas de noche, un armario.",
       "id": 125
+    },
+    {
+      "numHabitacion": "102",
+      "tipoHabitacion": "Doble",
+      "disponibilidad": "Sabado y Domingo",
+      "precio": "200000",
+      "imagen": "https://www.goldinnhotel.com/wp-content/uploads/2019/11/habitacion-doble.jpg",
+      "descripcion_breve": "dos camas individuales, ofrecen servicios como conexión Wi-Fi, televisión, y un baño privado o compartido.generalmente busca crear un ambiente acogedor y confortable",
+      "descripcion_amplia": "Una habitación doble es un espacio diseñado para alojar a dos personas. Por lo general, cuenta con una cama matrimonial (doble) o dos camas individuales, dependiendo de la configuración. Este tipo de habitación suele incluir comodidades como un escritorio, un armario, y en algunos casos, un área de estar.",
+      "id": 126
+    },
+    {
+      "numHabitacion": "99",
+      "tipoHabitacion": "Triple ",
+      "disponibilidad": "lunes-Viernes",
+      "precio": "30000",
+      "imagen": "https://aquamarinamanta.com/wp-content/uploads/2019/06/triple.jpg",
+      "descripcion_breve": "tres camas individuales, baño privado, televisión, aire acondicionado, y a veces un pequeño escritorio o área de estar. Ideal para familias pequeñas o grupos de amigos que viajan juntos.",
+      "id": 127
     }
   ]
 }

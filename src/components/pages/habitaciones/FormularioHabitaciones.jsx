@@ -38,7 +38,7 @@ const FormularioHabitaciones = ({titulo,estoyCreando})=>{
           setValue('precio', datoHabitacion.precio)      
           setValue('imagen', datoHabitacion.imagen)
           setValue('descripcion_breve', datoHabitacion.descripcion_breve)
-          setValue('descripcion_amplia', datoHabitacion.descripcion_amplia)
+          
         }
       }
     
@@ -220,30 +220,6 @@ const FormularioHabitaciones = ({titulo,estoyCreando})=>{
             </Form.Group>
 
 
-            <Form.Group className="mb-3" controlId="formdescripcion_amplia">
-              <Form.Label>Descripción Amplia:*</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Ej:  Generalmente cuenta con una cama tamaño queen o king, un escritorio amplio con buena iluminación, y sillas ergonómicas. Los servicios incluyen acceso a Wi-Fi de alta velocidad, una televisión de pantalla plana, minibar y, a menudo, un baño privado con amenities de calidad. La decoración suele ser elegante y moderna, creando un ambiente profesional y acogedor. Algunos hoteles también ofrecen acceso a salas de reuniones o áreas de trabajo compartidas"
-                as="textarea"
-                {...register("descripcion_amplia", {
-                  required: "La descripcion amplia es obligatoria",
-                  minLength: {
-                    value: 50,
-                    message:
-                      "Debe ingresar como minimo 50 caracteres para la descripcion amplia",
-                  },
-                  maxLength: {
-                    value: 1000,
-                    message:
-                      "Debe ingresar como maximo 50 caracteres para la descripcion amplia",
-                  },
-                })}
-              />
-              <Form.Text className="text-danger">
-                {errors.descripcion_amplia?.message}
-              </Form.Text>
-            </Form.Group>
     
 
             <Button type="submit" variant="secondary">

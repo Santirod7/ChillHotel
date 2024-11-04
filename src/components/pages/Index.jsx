@@ -83,11 +83,8 @@ const Index = () => {
               src="https://www.jaimelaucirica.cl/wp-content/uploads/2022/11/conce121_dpto_1122_04.jpg"
               alt="First slide"
             />
-            <Carousel.Caption>
-              <h3>Off 50% de Descuento</h3>
-              <p>Texto descriptivo para el primer slide.</p>
-              <Button variant="primary">Ver Más</Button>
-            </Carousel.Caption>
+            
+           
           </Carousel.Item>
           <Carousel.Item>
             <img
@@ -95,11 +92,7 @@ const Index = () => {
               src="https://media.admagazine.com/photos/6317bd95d75f2fd76bd148aa/master/w_1600%2Cc_limit/APR%2520-%2520Nooor%2520-%2520Appartement%252045m2%2520rue%2520de%2520Grenelle%2520-%2520cre%25CC%2581dit%2520Nicolas%2520MatheusG19_2044.jpg"
               alt="Second slide"
             />
-            <Carousel.Caption>
-              <h3>Segundo Slide</h3>
-              <p>Texto descriptivo para el segundo slide.</p>
-              <Button variant="primary">Ver Más</Button>
-            </Carousel.Caption>
+           
           </Carousel.Item>
           <Carousel.Item>
             <img
@@ -107,14 +100,13 @@ const Index = () => {
               src="https://wallpapercave.com/wp/wp4566625.jpg"
               alt="Third slide"
             />
-            <Carousel.Caption>
-              <h3>Tercer Slide</h3>
-              <p>Texto descriptivo para el tercer slide.</p>
-              <Button variant="primary">Ver Más</Button>
-            </Carousel.Caption>
+           
           </Carousel.Item>
         </Carousel>
       </div>
+
+
+
 
       <Container className="my-5">
         <h1 className="display-4 text-white">
@@ -130,7 +122,7 @@ const Index = () => {
             ></CatalogoHab>
           ))}
         </Row>
-        {/* Poner ejemplos de mas buscados*/}
+       
         <h2 className="display-4 text-white">Lo Mas Buscado:</h2>{" "}
         <hr className="border" />
         <Carousel>
@@ -173,7 +165,7 @@ const Index = () => {
           </Carousel.Item>
         </Carousel>
         <hr className="border border-white" />
-        {/* ofertas  */}
+       
         <section className="rounded-5 py-3 px-3 bg-dark my-5 d-md-flex text-white justify-content-md-center  Alinear text-lg-start text-center ">
           <div>
             <p className="text-light-emphasis ">
@@ -185,11 +177,11 @@ const Index = () => {
               </b>
             </h2>
             <p className="mb-4">
-              Ahorre hasta un 25% en habitaciones en hoteles selectos de Disney{" "}
+              Ahorre hasta un 25% en habitaciones en hoteles selectos de Disney
               <br />
               para estadías la mayoría de las noches 2/23-4/30/25. Además, otros
               <br />
-              ahorros para estadías la mayoría de las noches de domingo a jueves{" "}
+              ahorros para estadías la mayoría de las noches de domingo a jueves
               <br />
               1/1-2/20/25*.
             </p>

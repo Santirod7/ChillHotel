@@ -7,18 +7,12 @@
   }
   .PrincipalIndex {
     flex-grow: 1;
-    background-color: #06182f;
-background-image: linear-gradient(0deg, #06182f 0%, #E0C3FC 100%);
+    background-color: #043859;
+    background-image: linear-gradient(180deg, #043859 0%, #2aa18f 100%);
+    
 
   }
-  .PaginaDetalle{
-
-
-    flex-grow: 1;
-    background-color: #06182f;
-background-image: linear-gradient(0deg, #06182f 0%, #E0C3FC 100%);
-
-  }
+  
   .FormularioIndex{
 
     flex-grow: 1;
@@ -37,13 +31,10 @@ background-image: linear-gradient(0deg, #06182f 0%, #E0C3FC 100%);
   }
   
 
-
-/* alinear secciones */
 .Alinear{
   align-items: center;
 }
 
-  /* CARRUSELLL */
 
 
   .carousel-container {
@@ -65,11 +56,9 @@ background-image: linear-gradient(0deg, #06182f 0%, #E0C3FC 100%);
     }
   }
 
-  /* diseño pagos */
-
   .payment-methods {
     padding: 20px;
-    background-color: #f8f9fa; /* Color de fondo claro */
+    background-color: #f8f9fa; 
     border-radius: 8px;
   }
   
@@ -79,11 +68,11 @@ background-image: linear-gradient(0deg, #06182f 0%, #E0C3FC 100%);
   }
   
   .card {
-    border: 1px solid #dee2e6; /* Color del borde */
-    border-radius: 8px; /* Esquinas redondeadas */
+    border: 1px solid #dee2e6; 
+    border-radius: 8px; 
   }
   
   .card-img-top {
-    height: 100px; /* Altura de la imagen */
-    object-fit: contain; /* Ajustar la imagen */
+    height: 100px; 
+    object-fit: contain; 
   }

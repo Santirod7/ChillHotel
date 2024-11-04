@@ -17,16 +17,19 @@ const CatalogoHab = ({habitaciones2}) => {
           />
         </div>
         <Card.Body >
-          <Card.Title className="primary-font">{habitaciones2.tipoHabitacion}</Card.Title>
+          <Card.Title className="primary-font text-center">{habitaciones2.tipoHabitacion}</Card.Title>
           <Card.Text>
-            <span className="fw-bold">Disponibilidad:</span> {habitaciones2.disponibilidad} <br />
-            <span className="fw-bold">Numero De Habitacion: </span>{habitaciones2.numHabitacion} <br />
-            <span className="fw-bold">Descripcion:</span>{habitaciones2.descripcion_breve}
+          <span className="text-danger">${habitaciones2.precio},99</span><br />
+          <span className="fw-bold">Numero De Habitacion: </span>{habitaciones2.numHabitacion} <br />
+          <span className="fw-bold">Disponibilidad:</span> {habitaciones2.disponibilidad} <br />
+          <span className="fw-bold">Descripcion:</span>{habitaciones2.descripcion_breve}<br />
+            
+           
           </Card.Text>
         </Card.Body>
         <Card.Footer className="text-end">
           <Button className="btn btn-secondary me-2 border-3 border-black" to="">
-            Mas Detalles
+            Reservar ahora
           
           </Button>
         </Card.Footer>
