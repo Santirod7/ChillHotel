@@ -53,7 +53,7 @@ const FormularioRegistro = () => {
                 {...register("email", {
                   required: "El nombre de email es obligatorio",
                   pattern: {
-                    value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
+                    value: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
                     message:
                       "Ingrese una dirección de correo electrónico válida",
                   },
