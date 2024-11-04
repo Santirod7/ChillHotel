@@ -16,7 +16,7 @@ const Login = ({setUsuarioLogueado}) => {
     if(login(data)){
       Swal.fire({
         title: "Bienvenido",
-        text: `Este es tu panel de administración de Chill Hotel`,
+        text: `Este es tu panel de administración de ChillHotel`,
         icon: "success",
       });
       setUsuarioLogueado(data.email)
@@ -30,7 +30,9 @@ const Login = ({setUsuarioLogueado}) => {
     }
   };
   return (
-    <Container className="mainSection">
+    <section className="PrincipalIndex">
+
+<Container >
       <Card className="my-5">
         <Card.Header as="h5">Login</Card.Header>
         <Card.Body>
@@ -77,6 +79,8 @@ const Login = ({setUsuarioLogueado}) => {
         </Card.Body>
       </Card>
     </Container>
+    </section>
+    
   );
 };
 

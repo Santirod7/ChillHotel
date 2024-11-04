@@ -1,0 +1,74 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-weight: 400;
+  font-style: normal;
+}
+.PrincipalIndex {
+  flex-grow: 1;
+  background-color: #8bc6ec;
+  background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+}
+
+.FormularioIndex {
+
+
+  flex-grow: 1;
+}
+
+.card-img-top-nueva {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.img-thumbnail {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.Alinear {
+  align-items: center;
+}
+
+.carousel-container {
+  position: relative;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .carousel-caption {
+    font-size: 14px;
+  }
+}
+
+.payment-methods {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.payment-methods h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+}
+
+.card-img-top {
+  height: 100px;
+  object-fit: contain;
+}
