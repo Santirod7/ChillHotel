@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 function Futer(){
     return(
   <section className=' bg-body-tertiary 'bg="dark" data-bs-theme="dark"  >
-    <article className=''>
+    <article >
     <ul className=' text-white ' >
         <li>
 <h4>Chill hotel  </h4>

@@ -30,7 +30,7 @@ Finalmente, los gerentes de proyecto coordinan todos estos esfuerzos, aseguránd
 </ul>
 <ul>
 <img className='img' src="" alt="" />
-<h2> Franco</h2>
+<h2> Valentin</h2>
 </ul>
 
 </article>
