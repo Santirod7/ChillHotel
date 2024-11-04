@@ -7,6 +7,7 @@ import Footer from "./components/common/Footer";
 import Index from "./components/pages/Index";
 import QuienesSomos from "./components/pages/QuienesSomos";
 import Contactanos from "./components/pages/Contactanos";
+// import DetalleHab from "./components/pages/DetalleHab";
 // import Administrador from "./components/pages/Administrador";
 // import FormularioHabitaciones from "./components/pages/habitaciones/FormularioHabitaciones";
 import Error404 from "./components/pages/Error404";
@@ -33,6 +34,8 @@ function App() {
         <Route path="/" element={<Index></Index>}></Route>
         <Route path="/QuienesSomos" element={<QuienesSomos></QuienesSomos>}></Route>
         <Route path="/Contactanos" element={<Contactanos></Contactanos>}></Route>
+        {/* <Route path="/DetalleHab" element={<DetalleHab></DetalleHab>}></Route> */}
+
         <Route
           exact
           path="/login"

@@ -6,8 +6,6 @@ const CatalogoHab = ({habitaciones2}) => {
   
   
   
-  
-  
   return (
     <Col md={4} lg={4} className="mb-3">
       <Card className="h-100 border border-3 border-secondary-subtle">
@@ -27,8 +25,9 @@ const CatalogoHab = ({habitaciones2}) => {
           </Card.Text>
         </Card.Body>
         <Card.Footer className="text-end">
-          <Button className="btn btn-secondary me-2 border-3 border-black" to="*">
+          <Button className="btn btn-secondary me-2 border-3 border-black" to="">
             Mas Detalles
+          
           </Button>
         </Card.Footer>
       </Card>

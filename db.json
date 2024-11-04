@@ -9,6 +9,16 @@
       "descripcion_breve": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       "descripcion_amplia": "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
       "id": 124
+    },
+    {
+      "numHabitacion": "100",
+      "tipoHabitacion": "Matrimonial",
+      "disponibilidad": "lunes y viernes",
+      "precio": "1000",
+      "imagen": "https://cdn.photographylife.com/wp-content/uploads/2018/11/Moeraki-Boulders-New-Zealand.jpg",
+      "descripcion_breve": "asdsacscdfavvdvfadddddddddddddddddddddddd",
+      "descripcion_amplia": "vaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaf",
+      "id": 125
     }
   ]
 }
