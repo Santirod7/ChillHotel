@@ -1,34 +1,7 @@
 {
-    "habitacion": [
-      {
-        "nombreProducto": "Lapices FaberCastell escolares x 12",
-        "marca": "FaberCastell",
-        "precio": 4000,
-        "imagen": "https://images.pexels.com/photos/68808/pexels-photo-68808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "categoria": "Escritura",
-        "descripcion_breve": "Lápices premium con pigmentos resistentes a la luz",
-        "descripcion_amplia": "Los Faber-Castell Polychromos son lápices de colores profesionales con pigmentos de alta calidad y resistencia a la luz. Su textura cremosa garantiza trazos suaves y colores vibrantes, ideales para técnicas de capas y detalles precisos en el arte",
-        "id": 123
-      },
-      {
-        "nombreProducto": "Lapices de colores",
-        "marca": "Maped",
-        "precio": "3000",
-        "imagen": "https://images.pexels.com/photos/194098/pexels-photo-194098.jpeg",
-        "categoria": "Escritura",
-        "descripcion_breve": "Lápices de colores ideales para todas las edades.",
-        "descripcion_amplia": "Los lápices de colores Crayola son perfectos para los pequeños artistas y para aquellos que buscan colores vibrantes y duraderos. Con una fórmula libre de sustancias tóxicas, ofrecen una experiencia de dibujo segura y divertida. Su diseño ergonómico facilita el agarre.",
-        "id": 124
-      },
-      {
-        "nombreProducto": "Acuarelas Winsor & Newton x 12",
-        "marca": "Winsor & Newton",
-        "precio": "50000",
-        "imagen": "https://images.pexels.com/photos/6487216/pexels-photo-6487216.jpeg",
-        "categoria": "Arte",
-        "descripcion_breve": "Acuarelas de calidad artística",
-        "descripcion_amplia": "Las acuarelas Winsor & Newton ofrecen una gama rica y vibrante de colores que se mezclan fácilmente, permitiendo crear hermosas transiciones y efectos. Su alta concentración de pigmento garantiza una excelente luminosidad y permanencia en el tiempo. Ideales para artistas profesionales y aficionados.",
-        "id": 127
-      }
-    ]
-  }
+  "habitacion": [
+  ],
+  "usuario": [
+  
+  ]
+}

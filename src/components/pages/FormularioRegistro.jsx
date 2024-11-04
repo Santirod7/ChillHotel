@@ -1,14 +1,41 @@
 import { Form, Button, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { nuevoUsuario } from "../../helpers/queries";
+
 
 const FormularioRegistro = () => {
   const {
     register,
     handleSubmit,
-    setValue,
+    reset,
+    watch,
     formState: { errors },
   } = useForm();
+
+  const navegacion = useNavigate();
+  const password = watch('password');
+
+  const usuarioValidado = async (usuario) => {
+    console.log(usuario)
+      const respuesta = await nuevoUsuario(usuario);
+      if (respuesta.status === 201) {
+        Swal.fire({
+          title: "Registro exitoso",
+          text: `Ya eres parte del Chill World`,
+          icon: "success",
+        });
+        reset();
+        navegacion('/')
+      } else {
+        Swal.fire({
+          title: "Ocurrio un error",
+          text: `No pudo ser registrado, intente esta operación en unos minutos.`,
+          icon: "error",
+        });
+        }
+        }
 
   return (
     <article className="w-100">
@@ -17,8 +44,8 @@ const FormularioRegistro = () => {
           Registrarse
         </Card.Header>
         <Card.Body>
-          <Form className="container my-2 ">
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form className="container my-2 " onSubmit={handleSubmit(usuarioValidado)}>
+            <Form.Group className="mt-2" controlId="formBasicEmail">
               <Form.Label>Email </Form.Label>
               <Form.Control
                 type="email"
@@ -36,7 +63,7 @@ const FormularioRegistro = () => {
               {errors.email?.message}
               </Form.Text>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formnombreUsuario">
+            <Form.Group className="mt-2" controlId="formnombreUsuario">
               <Form.Label>Nombre de usuario</Form.Label>
               <Form.Control
                 type="text"
@@ -61,7 +88,7 @@ const FormularioRegistro = () => {
               </Form.Text>
             <div className="row">
               <div className="col-6">
-                <Form.Group className="mb-3" controlId="formNombre">
+                <Form.Group className="mt-2" controlId="formNombre">
                   <Form.Label>Nombre</Form.Label>
                   <Form.Control
                     type="text"
@@ -79,12 +106,12 @@ const FormularioRegistro = () => {
                     })}
                   />
                 </Form.Group>
-                <Form.Text className="text-danger">
+                <Form.Text className="text-danger mt-0">
               {errors.nombre?.message}
               </Form.Text>
               </div>
               <div className="col-6">
-                <Form.Group className="mb-3" controlId="formApellido">
+                <Form.Group className="mt-2" controlId="formApellido">
                   <Form.Label>Apellido</Form.Label>
                   <Form.Control
                     type="text"
@@ -107,20 +134,20 @@ const FormularioRegistro = () => {
               </Form.Text>
               </div>
             </div>
-            <Form.Group className="mb-3" controlId="formNacionalidad">
+            <Form.Group className="mt-2" controlId="formNacionalidad">
               <Form.Label>Nacionalidad</Form.Label>
               <Form.Select aria-label="Selector" {...register("selector", {
                       required: "La nacionalidad es requerida",
                       })}>
                 <option>Seleccione su nacionalidad</option>
-                <option value="1">Argentina</option>
-                <option value="2">Chile</option>
-                <option value="3">US</option>
-                <option value="4">Brasil</option>
-                <option value="5">México</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Chile">Chile</option>
+                <option value="Estados Unidos">US</option>
+                <option value="Brasil">Brasil</option>
+                <option value="México">México</option>
               </Form.Select>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mt-2" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
@@ -138,27 +165,25 @@ const FormularioRegistro = () => {
             <Form.Text className="text-danger">
                 {errors.password?.message}
               </Form.Text>
-            <Form.Group className="mb-3" controlId="formBasicRepeatPassword">
+            <Form.Group className="mt-2" controlId="formBasicRepeatPassword">
               <Form.Label>Repetir Password</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="Repetir Password"
                 {...register("repeatPassword", {
-                  required: "Repetir password es obligatorio",
+                  required: "Confirme su password",
                   pattern: {
                     value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
                     message:
-                      "Los passwords no coinciden",
+                      "El password debe contener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número",
                   },
+                  validate: (value) => value === password || 'Los passwords no coinciden',
                 })}
               />
             </Form.Group>
-            {setValue('password') === setValue('repeatPassword') ? (<Form.Text className="text-success">
-                    Los passwords coinciden
-                    </Form.Text>) : (<Form.Text className="text-danger">
-                    {errors.repeatPassword?.message}
-                    </Form.Text>)
-                }
+            <Form.Text className="text-danger">
+                {errors.repeatPassword?.message}
+              </Form.Text>
             <Form.Group className="mb-3 d-flex" controlId="formBasicCheckbox">
               <Form.Check type="checkbox" />
               <Form.Label className="ms-2">
