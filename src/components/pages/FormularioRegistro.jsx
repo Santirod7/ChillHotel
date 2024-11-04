@@ -136,7 +136,7 @@ const FormularioRegistro = () => {
             </div>
             <Form.Group className="mt-2" controlId="formNacionalidad">
               <Form.Label>Nacionalidad</Form.Label>
-              <Form.Select aria-label="Selector" {...register("selector", {
+              <Form.Select aria-label="Selector" {...register("nacionalidad", {
                       required: "La nacionalidad es requerida",
                       })}>
                 <option>Seleccione su nacionalidad</option>
@@ -147,6 +147,9 @@ const FormularioRegistro = () => {
                 <option value="México">México</option>
               </Form.Select>
             </Form.Group>
+            <Form.Text className="text-danger">
+              {errors.nacionalidad?.message}
+              </Form.Text>
             <Form.Group className="mt-2" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control
