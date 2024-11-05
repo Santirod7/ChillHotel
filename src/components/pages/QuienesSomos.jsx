@@ -79,13 +79,13 @@ const QuienesSomos = () => {
         </div>
 
       <Container className="mt-5">
-      <h2 className="text-start mb-4">¿Quiénes Somos?</h2>
-      <Row>
+      <h2 className="text-center mb-4">¿Quiénes Somos?</h2>
+      <Row className="justify-content-beetwen">
         {integrantes.map((integrante, index) => (
           <Col key={index} md={6} lg={3} className="mb-4">
             
             <Card className="border border-4">
-              <Card.Img variant="" src={integrante.imagen}  />
+              <Card.Img variant="" src={integrante.imagen}  className="img" />
               <Card.Body>
                 <Card.Title>{integrante.nombre}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">{integrante.cargo}</Card.Subtitle>
@@ -98,7 +98,6 @@ const QuienesSomos = () => {
       
     </Container>
 
- 
 
     </section>
   );
