@@ -1,7 +1,14 @@
 import { Col, Card, Button } from "react-bootstrap";
+import Swal from "sweetalert2";
 
 const CatalogoHab = ({habitaciones2}) => {
-  
+  const alertSwal =()=>{
+    Swal.fire({
+      title: "Habitacion Reservada",
+      text: `La Habitacion ${habitaciones2.tipoHabitacion}, fue reservada correctamente`,
+      icon: "success", 
+    });
+  }
   
   
   
@@ -28,7 +35,7 @@ const CatalogoHab = ({habitaciones2}) => {
           </Card.Text>
         </Card.Body>
         <Card.Footer className="text-end">
-          <Button className="btn btn-secondary me-2 border-3 border-black" to="">
+          <Button className="btn btn-secondary me-2 border-3 border-black" onClick={alertSwal}>
             Reservar ahora
           
           </Button>
