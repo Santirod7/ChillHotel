@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 
     const borrarHabitacion = async()=>{
         
-        const respuesta = await borrarHabitacionesAPI(habitacion.id)
+        const respuesta = await borrarHabitacionesAPI(habitacion._id)
         if(respuesta.status === 200){
           Swal.fire({
             title: "Habitacion eliminada",
@@ -48,7 +48,7 @@ import Swal from "sweetalert2";
           ></img>
         </td>
         <td className="text-center">
-          <Link className="btn btn-warning me-lg-2" to={`/administrador/editar/${habitacion.id}`}>
+          <Link className="btn btn-warning me-lg-2" to={`/administrador/editar/${habitacion._id}`}>
             <i className="bi bi-pencil-square"></i>
           </Link>
           <Button variant="danger" onClick={borrarHabitacion}>

@@ -116,7 +116,7 @@ const Index = () => {
         <Row>
           {habitaciones2.map((habitaciones2) => (
             <CatalogoHab
-              key={habitaciones2.id}
+              key={habitaciones2._id}
               habitaciones2={habitaciones2}
               setHabitaciones={setHabitaciones}
             ></CatalogoHab>
