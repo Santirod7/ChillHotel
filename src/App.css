@@ -72,3 +72,30 @@
   height: 100px;
   object-fit: contain;
 }
+  .mainSection{
+    flex-grow: 1;
+  }
+
+.bg-registro{
+    background-color: rgb(80, 89, 128);
+}
+.img-fondo-login{
+  background-image: url("./assets/imagenRegistro.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.tamaño-icon-facebook{
+  width: 500px;
+}
+@media (min-width: 992px) {
+  .img-fondo-login{
+   height: 800px;
+  }
+ }
+@media (min-width: 0px) {
+  .img-fondo-login{
+   height: 780px;
+  }
+ }
+
+
