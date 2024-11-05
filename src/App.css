@@ -72,7 +72,12 @@
   height: 100px;
   object-fit: contain;
 }
-  .mainSection{
+.img{ border: solid 1px;
+   
+width: 220px;
+height: 220px;}
+
+.mainSection{
     flex-grow: 1;
   }
 
