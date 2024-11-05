@@ -1,14 +1,11 @@
- export const URLHabitaciones = import.meta.env.VITE_API_HABITACIONES;
-// const URL_Usuario = import.meta.env.VITE_API_USUARIO;
+export const URL = import.meta.env.VITE_API;
 
-// CREAR HABITACIONES 
 export const crearHabitacionesAPI = async(HabitacionNueva)=>{
   try {
-      const respuesta = await fetch(URLHabitaciones,{
+      const respuesta = await fetch(URL+'/habitaciones/',{
           method: "POST",
           headers: {
               "Content-Type":"application/json",
-              // "x-token": JSON.parse(sessionStorage.getItem('ChillHotel')).token
           },
           body: JSON.stringify(HabitacionNueva)
       })
@@ -19,10 +16,9 @@ export const crearHabitacionesAPI = async(HabitacionNueva)=>{
   }
 }
 
-//GET
 export const leerHabitacionesAPI = async()=>{
   try {
-      const respuesta = await fetch(URLHabitaciones);
+      const respuesta = await fetch(URL+'/habitaciones/');
       return respuesta;
   } catch (error) {
       console.error(error)
@@ -30,10 +26,9 @@ export const leerHabitacionesAPI = async()=>{
   }
   }
 
-  //GET que devuelve una Habitacion
 export const obtenerHabitacionesAPI = async(id)=>{
   try {
-      const respuesta = await fetch(URLHabitaciones+'/'+id);
+      const respuesta = await fetch(URL+'/habitaciones/'+id);
       return respuesta;
   } catch (error) {
       console.error(error)
@@ -41,10 +36,10 @@ export const obtenerHabitacionesAPI = async(id)=>{
   }
   }
 
-//PUT o PATCH editar
+
 export const editarHabitacionesAPI = async(HabitacionEditada, id)=>{
   try {
-      const respuesta = await fetch(URLHabitaciones+'/'+id,{
+      const respuesta = await fetch(URL+'/habitaciones/'+id,{
           method: "PUT",
           headers: {
               "Content-Type":"application/json"
@@ -58,10 +53,10 @@ export const editarHabitacionesAPI = async(HabitacionEditada, id)=>{
   }
 }
 
- //DELETE
+
  export const borrarHabitacionesAPI = async(id)=>{
   try {
-      const respuesta = await fetch(URLHabitaciones+'/'+id,{
+      const respuesta = await fetch(URL+'/habitaciones/'+id,{
           method: "DELETE"
       })
       return respuesta
@@ -72,19 +67,80 @@ export const editarHabitacionesAPI = async(HabitacionEditada, id)=>{
 }
 
 
+export const nuevoUsuario = async(usuario)=>{
+    try {
+        const respuesta = await fetch(URL+'/usuario',{
+            method: "POST",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(usuario)
+        })
+        sessionStorage.setItem("ChillHotel", JSON.stringify(usuario.email));
+        return respuesta
+    } catch (error) {
+        console.log(error)
+        return false;
+    }
+}
+export const leerUsuario = async()=>{
+  try {
+      const respuesta = await fetch(URL+'/usuario');
+      return respuesta;
+  } catch (error) {
+      console.error(error)
+      return false;
+  }
+  }
 
-const userAdmin = {
-  email: "admin@ChillHotel.com",
-  password: "ChillHotel2024",
-};
-
-export const login = (usuario) => {
-    
+  export const adjuntoUsuario = async(id)=>{
+  try {
+      const respuesta = await fetch(URL+'/usuario/'+id);
+      return respuesta;
+  } catch (error) {
+      console.error(error)
+      return false;
+  }
+  }
   
+  export const editarUsuario = async(usuarioEditado, id)=>{
+      try {
+          const respuesta = await fetch(URL+'/usuario/'+id,{
+              method: "PUT",
+              headers: {
+                  "Content-Type":"application/json"
+              },
+              body: JSON.stringify(usuarioEditado)
+          })
+          return respuesta
+      } catch (error) {
+          console.error(error)
+          return false;
+      }
+  }
+  
+  export const borrarUsuario = async(id)=>{
+      try {
+          const respuesta = await fetch(URL+'/'+id,{
+              method: "DELETE"
+          })
+          return respuesta
+      } catch (error) {
+          console.error(error)
+          return false;
+      }
+  }
+
+  export const userAdmin = {
+    email: "admin@ChillHotel.com",
+    password: "ChillHotel2024",
+  };
+  
+export const login = (usuario, usuarioRegistrado) => {
   if (
       usuario.email === userAdmin.email &&
       usuario.password === userAdmin.password
-    ) {
+   || usuarioRegistrado.filter((usuarioRegistrado)=>usuarioRegistrado.email === usuario.email ) && usuarioRegistrado.filter((usuarioRegistrado)=>usuarioRegistrado.email === usuario.email)) {
       sessionStorage.setItem("ChillHotel", JSON.stringify(usuario.email));
       return true;
     } else {

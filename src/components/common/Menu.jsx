@@ -1,4 +1,4 @@
-import { Navbar, Container, Nav,Button} from "react-bootstrap";
+import { Navbar, Container, Nav, Button} from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
 const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
@@ -19,7 +19,6 @@ const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
   return (
     <Navbar expand="lg" className="bg-dark" data-bs-theme="dark">
       <Container>
-        {/* as LInk se comporte como link */}
         <Navbar.Brand as={Link} to='/'>
           <i className="bi bi-airplane-engines-fill"></i> Chill Hotel
         </Navbar.Brand>
@@ -33,12 +32,19 @@ const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
 
             {
               usuarioLogueado !== ""?(
-                <>
-                <NavLink end to='/administrador' className='nav-link'>Administrador</NavLink>
-                <Button variant="dark"  onClick={logout}>Logout</Button>
-                </>
+                <div className="d-flex">{
+                  usuarioLogueado === "admin@ChillHotel.com"?(
+                    <div className="d-flex">
+                      <NavLink end to='/administrador' className='nav-link'>Administrador</NavLink>
+                      <Button variant="dark"  onClick={logout}><i className="bi bi-person-dash">   Cerrar sesión</i></Button>
+                    </div>
+                ):(<Button variant="dark"  onClick={logout}><i className="bi bi-person-dash">   Cerrar sesión</i></Button>)
+                }
+                </div>
               ):(
-                <NavLink end to='/login' className='nav-link'>Login</NavLink>
+                <div>
+                <NavLink end to='/usuario' className='nav-link'><i className="bi bi-person-add">  Iniciar sesión</i></NavLink>
+                </div>
               )
             }
          

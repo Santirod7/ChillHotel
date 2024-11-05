@@ -6,13 +6,11 @@ import Footer from "./components/common/Footer";
 import Index from "./components/pages/Index";
 import QuienesSomos from "./components/pages/QuienesSomos";
 import Contactanos from "./components/pages/Contactanos";
-
+import Usuario from "./components/pages/Usuario";
 import Error404 from "./components/pages/Error404";
-
 import { useState } from "react";
 import RutasProtegidas from "./routes/RutasProtegidas";
 import RutasAdmin from "./routes/RutasAdministrador";
-import Login from "./components/pages/Login";
 
 
 
@@ -26,17 +24,13 @@ function App() {
       <Menu
         usuarioLogueado={usuarioLogueado}
         setUsuarioLogueado={setUsuarioLogueado}
-      ></Menu>
+        ></Menu>
       <Routes>
         <Route path="/" element={<Index></Index>}></Route>
         <Route path="/QuienesSomos" element={<QuienesSomos></QuienesSomos>}></Route>
         <Route path="/Contactanos" element={<Contactanos></Contactanos>}></Route>
-       <Route
-          exact
-          path="/login"
-          element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}
-        ></Route>
-         <Route
+        <Route path="/usuario" element={<Usuario setUsuarioLogueado={setUsuarioLogueado}></Usuario>}></Route>
+        <Route
           exact
           path="/administrador/*"
           element={

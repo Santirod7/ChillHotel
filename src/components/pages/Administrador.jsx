@@ -1,7 +1,7 @@
 import { Button,Table } from "react-bootstrap";
 import ItemHabitaciones from "./habitaciones/ItemHabitaciones";
 import { useEffect, useState } from "react";
-import { leerHabitacionesAPI,URLHabitaciones } from "../../helpers/queries";
+import { leerHabitacionesAPI } from "../../helpers/queries";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
