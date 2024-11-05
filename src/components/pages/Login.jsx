@@ -108,12 +108,11 @@ const Login = ({setUsuarioLogueado}) => {
   <GoogleLogin className="ps-auto"
   onSuccess={credentialResponse => {
     Swal.fire({
-      title: "Bienvenido",
-      text: `Ingresaste exitosamente al Chill World`,
-      icon: "success",
+      title: "Ocurrio un problema",
+      text: `No puedes ingresar con google momentaneamente, intentelo mas tarde`,
+      icon: "error",
     })
-    const usuario = sessionStorage.setItem("ChillHotel", JSON.stringify(usuario.email));
-    setUsuarioLogueado(usuario.email)
+    navegacion('/Error404')
   }}
   onError={() => {
     Swal.fire({

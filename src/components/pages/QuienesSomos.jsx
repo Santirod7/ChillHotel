@@ -8,10 +8,11 @@ import Santiago from "../../img/Santiago.png";
 const QuienesSomos = () => {
   return (
     <section className="PrincipalIndex">
-      <h1>Equipo desarrolador</h1>
+      <div className="container">
+
+      <h1 className="text-center mt-3 mb-3 bg-light text-dark">Equipo desarrolador</h1>
 
       <p>
-        {" "}
         El equipo desarrollador de una página hotelera suele estar compuesto por
         profesionales de diversas áreas que trabajan en conjunto para crear una
         experiencia en línea atractiva y funcional para los usuarios. Este
@@ -38,37 +39,34 @@ const QuienesSomos = () => {
           <div>
             <img className="img" src={Franco} alt="Franco Pereira" />
           </div>
-
-          <h2>Franco Pereira</h2>
-          <p>
-           
-          </p>
+          <h4 className="text-center">Franco Pereira</h4>
         </ul>
         <ul>
           <div>
             <img className="img" src={Ezequiel} alt=" Ezequien infante" />
           </div>
-          <h2> Ezequien infante</h2>
+          <h4> Ezequien infante</h4>
         </ul>
         <ul>
           <div>
             <img className="img" src={Axel} alt="Axel Sebastian Gonzalez" />
           </div>
-          <h2> Axel Gonzalez</h2>
+          <h4> Axel Gonzalez</h4>
         </ul>
         <ul>
           <div>
             <img className="img" src={Santiago} alt=" Santiago Rodriguez" />
           </div>
-          <h2> Santiago Rodriguez</h2>
+          <h4> Santiago Rodriguez</h4>
         </ul>
         <ul>
           <div>
             <img className="img" src={Valentin} alt="Valentin Lobo" />
           </div>
-          <h2> Valentin Lobo</h2>
+          <h4> Valentin Lobo</h4>
         </ul>
       </article>
+      </div>
     </section>
   );
 };
