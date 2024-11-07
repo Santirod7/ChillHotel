@@ -138,18 +138,22 @@ const FormularioRegistro = ({setUsuarioLogueado}) => {
               <Form.Label>Nacionalidad</Form.Label>
               <Form.Select aria-label="Selector" {...register("nacionalidad", {
                       required: "La nacionalidad es requerida",
-                      })}>
-                <option>Seleccione su nacionalidad</option>
+                      })}
+                      aria-invalid={errors.nacionalidad ? "true" : "false"
+                      }>
+                <option value="">Seleccione su nacionalidad</option>
                 <option value="Argentina">Argentina</option>
                 <option value="Chile">Chile</option>
                 <option value="Estados Unidos">US</option>
                 <option value="Brasil">Brasil</option>
                 <option value="México">México</option>
               </Form.Select>
+              {errors.nacionalidad && (
+          <Form.Text className="text-danger">
+            {errors.nacionalidad.message}
+          </Form.Text>
+        )}
             </Form.Group>
-            <Form.Text className="text-danger">
-              {errors.nacionalidad?.message}
-              </Form.Text>
             <Form.Group className="mt-2" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control

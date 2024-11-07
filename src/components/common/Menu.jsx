@@ -8,11 +8,8 @@ const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
   const navegacion = useNavigate();
 
   const logout = () => {
-   
     sessionStorage.removeItem("ChillHotel");
-    
     setUsuarioLogueado("");
-    
     navegacion("/");
   };
  
@@ -22,7 +19,7 @@ const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
     <Navbar expand="lg" className="bg-dark" data-bs-theme="dark">
       <Container>
         <Navbar.Brand as={Link} to='/'>
-          <i className="bi bi-airplane-engines-fill"></i> Chill Hotel
+        <i className="bi bi-airplane-engines-fill"></i> Chill Hotel
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

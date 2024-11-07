@@ -2,7 +2,7 @@ export const URL = import.meta.env.VITE_API;
 
 export const crearHabitacionesAPI = async(HabitacionNueva)=>{
   try {
-      const respuesta = await fetch(URL+'/habitaciones/',{
+      const respuesta = await fetch(URL+'/habitaciones',{
           method: "POST",
           headers: {
               "Content-Type":"application/json",
@@ -18,7 +18,7 @@ export const crearHabitacionesAPI = async(HabitacionNueva)=>{
 
 export const leerHabitacionesAPI = async()=>{
   try {
-      const respuesta = await fetch(URL+'/habitaciones/');
+      const respuesta = await fetch(URL+'/habitaciones');
       return respuesta;
   } catch (error) {
       console.error(error)

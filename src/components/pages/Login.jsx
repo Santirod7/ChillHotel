@@ -29,8 +29,8 @@ const Login = ({setUsuarioLogueado}) => {
       navegacion('/')
     }else{
       Swal.fire({
-        title: "Ocurrio un error",
-        text: `Email o password incorrecto`,
+        title: "Email o password incorrecto",
+        text: `Ingrese nuevamente sus datos`,
         icon: "error",
       });
     }
@@ -42,8 +42,7 @@ const Login = ({setUsuarioLogueado}) => {
   recibirUsuario();
   },[])
 
-  const recibirUsuario= async ()=>{
-    
+  const recibirUsuario= async ()=>{   
     const respuesta = await leerUsuario();
     if(respuesta.status===200){
   
@@ -51,8 +50,8 @@ const Login = ({setUsuarioLogueado}) => {
     setUsuarioRegistrado(datos);
     }else{
       Swal.fire({
-        title:"ocurrio un error ",
-         text:`no se pudo obtener el listado de Habitaciones,intente en unos minutos..`,
+        title:"En este momento no es posible iniciar sesión o registrarse",
+         text:`Hubo un problema de nuestro lado, que imposibilita el inicio de sesión/registrarse. Intentelo más tarde`,
          icon:"error"
         });
    }}
