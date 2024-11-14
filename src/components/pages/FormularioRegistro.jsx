@@ -164,7 +164,7 @@ const FormularioRegistro = ({setUsuarioLogueado}) => {
                   pattern: {
                     value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
                     message:
-                      "El password debe contener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número",
+                      "El password debe contener al menos 8 caracteres, una letra mayúscula, una letra minúscula, un número y un caracter especial",
                   },
                 })}
               />

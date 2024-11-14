@@ -1,4 +1,6 @@
 export const URL = import.meta.env.VITE_API;
+export const EmailAdmin = import.meta.env.VITE_ADMIN_EMAIL;
+export const passwordAdmin = import.meta.env.VITE_ADMIN_PASSWORD;
 
 export const crearHabitacionesAPI = async(HabitacionNueva)=>{
   try {
@@ -132,8 +134,8 @@ export const leerUsuario = async()=>{
   }
 
   export const userAdmin = {
-    email: "admin@ChillHotel.com",
-    password: "ChillHotel2024",
+    email: `${EmailAdmin}`,
+    password: `${passwordAdmin}`,
   };
   
 export const login = (usuario, usuarioRegistrado) => {

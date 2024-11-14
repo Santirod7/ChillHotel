@@ -22,7 +22,7 @@ const Login = ({setUsuarioLogueado}) => {
     if(login(data, usuarioRegistrado)){
       Swal.fire({
         title: "Bienvenido",
-        text: `Este es tu panel de administración de Chill Hotel`,
+        text: `Hola `,
         icon: "success",
       });
       setUsuarioLogueado(data.email)

@@ -14,7 +14,6 @@ import RutasAdmin from "./routes/RutasAdministrador";
 
 
 
-
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem('ChillHotel')) || "";
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
@@ -27,8 +26,8 @@ function App() {
         ></Menu>
       <Routes>
         <Route path="/" element={<Index></Index>}></Route>
-        <Route path="/QuienesSomos" element={<QuienesSomos></QuienesSomos>}></Route>
-        <Route path="/Contactanos" element={<Contactanos></Contactanos>}></Route>
+        <Route path="/quienes-somos" element={<QuienesSomos></QuienesSomos>}></Route>
+        <Route path="/contactanos" element={<Contactanos></Contactanos>}></Route>
         <Route path="/usuario" element={<Usuario setUsuarioLogueado={setUsuarioLogueado}></Usuario>}></Route>
         <Route
           exact
