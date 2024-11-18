@@ -31,7 +31,7 @@ const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
             {
               usuarioLogueado !== ""?(
                 <div className="d-flex">{ 
-                  usuarioLogueado ===`${userAdmin.email}`?(
+                  usuarioLogueado.email ===`${userAdmin.email}`?(
                     <div className="d-flex">
                       <NavLink end to='/administrador' className='nav-link'>Administrador</NavLink>
                       <Button variant="dark"  onClick={logout}><i className="bi bi-person-dash">   Cerrar sesión</i></Button>

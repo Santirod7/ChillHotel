@@ -138,15 +138,19 @@ export const leerUsuario = async()=>{
     password: `${passwordAdmin}`,
   };
   
-export const login = (usuario, usuarioRegistrado) => {
-  if (
-      usuario.email === userAdmin.email &&
-      usuario.password === userAdmin.password
-   || usuarioRegistrado.filter((usuarioRegistrado)=>usuarioRegistrado.email === usuario.email ) && usuarioRegistrado.filter((usuarioRegistrado)=>usuarioRegistrado.email === usuario.email)) {
-      sessionStorage.setItem("ChillHotel", JSON.stringify(usuario.email));
-      return true;
-    } else {
-      return false;
+  export const login = async (usuario) =>{
+    try {
+      const respuesta = await fetch(URL+'/ingreso', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(usuario),
+      });
+      return  respuesta
+    } catch (error) {
+      console.error(error);
+      return { error: "Error en el login" };
     }
-  };
+  }
 

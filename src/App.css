@@ -89,6 +89,10 @@
 .tamaño-icon-facebook{
   width: 500px;
 }
+.modalIntruso{
+  display: block;
+  position: initial;
+}
 @media (min-width: 992px) {
   .img-fondo-login{
    height: 800px;

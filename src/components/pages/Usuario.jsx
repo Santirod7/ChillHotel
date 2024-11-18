@@ -3,20 +3,35 @@ import FormularioRegistro from './FormularioRegistro';
 import Login from './Login';
 import { useEffect, useState } from 'react';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import { useNavigate } from "react-router-dom";
 import ToggleButton from 'react-bootstrap/ToggleButton';
+import Swal from "sweetalert2";
+
 
 const Usuario = ({setUsuarioLogueado}) => { 
   const [registro, setRegistro] = useState(true)
-
+  const usuario = JSON.parse(sessionStorage.getItem('ChillHotel')) || null
   const [radioValue, setRadioValue] = useState('2');
-
   const radios = [
     { name: 'Registrarse', value: '1' },
     { name: 'Iniciar sesión', value: '2' },
   ];
+  const navegacion = useNavigate()
+  const existeUsuario = (usuario) =>{ 
+    usuario !== null?(
+      navegacion("/"),
+      Swal.fire({
+        title: "Sesión activa",
+        text: `Tu sesión está activa. Cierra sesión para ingresar a esta ruta`,
+        icon: "error",
+      })):(
+      navegacion("/usuario")
+    )
+  }
 
   useEffect(()=>{
     setRegistro(false)
+    existeUsuario(usuario)
   },[])
 
   const formularioRegistro = () =>{
