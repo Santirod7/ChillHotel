@@ -1,7 +1,8 @@
-import { Navbar, Container, Nav, Button} from "react-bootstrap";
+import { Navbar, Container, Nav, Button, NavDropdown} from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import { userAdmin } from "../../helpers/queries";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 
 const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
@@ -24,24 +25,48 @@ const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
         <Navbar.Collapse id="basic-navbar-nav">
          
         <Nav className="ms-auto">
-            <NavLink end to='/' className='nav-link'>Inicio</NavLink>
-            <NavLink end to='/quienes-somos' className='nav-link'>¿Quienes Somos?</NavLink>
-            <NavLink end to='/contactanos' className='nav-link'>Contactanos</NavLink>
+            <NavLink end to='/' className='nav-link menu-link'>Inicio</NavLink>
+            <NavLink end to='/quienes-somos' className='nav-link menu-link'>¿Quienes Somos?</NavLink>
+            <NavLink end to='/contactanos' className='nav-link menu-link'>Contactanos</NavLink>
 
             {
               usuarioLogueado !== ""?(
                 <div className="d-flex">{ 
                   usuarioLogueado.email ===`${userAdmin.email}`?(
                     <div className="d-flex">
-                      <NavLink end to='/administrador' className='nav-link'>Administrador</NavLink>
-                      <Button variant="dark"  onClick={logout}><i className="bi bi-person-dash">   Cerrar sesión</i></Button>
+                      <NavLink end to='/administrador' className='nav-link menu-link'>Administrador</NavLink>
+                      <Button className="py-0 ms-2">   
+                      <NavDropdown title={<i className="align-content-center bi bi-person-dash"></i>} id="basic-nav-dropdown">             
+              <NavDropdown.Item href="#action/3.1">Mi perfil</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+              Mis reservas
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Mis CDD</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4" onClick={logout}>
+                Cerrar sesión
+              </NavDropdown.Item>
+            </NavDropdown>
+            </Button>
                     </div>
-                ):(<Button variant="dark"  onClick={logout}><i className="bi bi-person-dash">   Cerrar sesión</i></Button>)
+                ):(<Button className="py-0 ps-2">   
+                  <NavDropdown title={<i className="align-content-center bi bi-person-dash"></i>} id="basic-nav-dropdown">             
+          <NavDropdown.Item href="#action/3.1">Mi perfil</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.2">
+          Mis reservas
+          </NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.3">Mis CDD</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item href="#action/3.4" onClick={logout}>
+            Cerrar sesión
+          </NavDropdown.Item>
+        </NavDropdown>
+        </Button>)
                 }
                 </div>
               ):(
                 <div>
-                <NavLink end to='/usuario' className='nav-link'><i className="bi bi-person-add">  Iniciar sesión</i></NavLink>
+                <NavLink end to='/usuario' className='nav-link btn bg-primary'><i className="bi bi-person-add">  Iniciar sesión</i></NavLink>
                 </div>
               )
             }
