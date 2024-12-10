@@ -37,7 +37,7 @@ const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
                       <NavLink end to='/administrador' className='nav-link menu-link'>Administrador</NavLink>
                       <Button className="py-0 ms-2">   
                       <NavDropdown title={<i className="align-content-center bi bi-person-dash"></i>} id="basic-nav-dropdown">             
-              <NavDropdown.Item href="#action/3.1">Mi perfil</NavDropdown.Item>
+                      <NavDropdown.Item ><NavLink end to="/perfil" className="text-decoration-none">Mi perfil</NavLink></NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
               Mis reservas
               </NavDropdown.Item>
@@ -49,9 +49,9 @@ const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
             </NavDropdown>
             </Button>
                     </div>
-                ):(<Button className="py-0 ps-2">   
-                  <NavDropdown title={<i className="align-content-center bi bi-person-dash"></i>} id="basic-nav-dropdown">             
-          <NavDropdown.Item href="#action/3.1">Mi perfil</NavDropdown.Item>
+                ):(<Button className="py-0 px-0 ms-2">   
+                  <NavDropdown className="px-2" title={<i className="align-content-center bi bi-person-dash"></i>} id="basic-nav-dropdown">             
+          <NavDropdown.Item ><NavLink end to="/perfil" className="text-decoration-none text-light">Mi perfil</NavLink></NavDropdown.Item>
           <NavDropdown.Item href="#action/3.2">
           Mis reservas
           </NavDropdown.Item>

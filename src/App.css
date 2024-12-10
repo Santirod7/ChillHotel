@@ -12,10 +12,18 @@
 }
 
 .FormularioIndex {
-
-
   flex-grow: 1;
 }
+
+.imagen-usuario{
+width: 250px;
+height: 250px;
+}
+
+ .public-perfil{
+  height: 300px;
+  object-fit: cover;
+ } 
 
 .card-img-top-nueva {
   width: 100%;
@@ -110,6 +118,7 @@
   left: 0;
 }
 
+
 .hover-nav:hover {
   border-bottom: 1px;
   color: white;
@@ -138,15 +147,28 @@
   display: block;
   position: initial;
 }
+.btn-perfil{
+  width: 125%;
+  height: 95%;
+}
 @media (min-width: 992px) {
   .img-fondo-login{
    height: 800px;
   }
+  .imagen-usuario{
+    width: 150px;
+    height: 150px;
+    }
  }
 @media (min-width: 0px) {
   .img-fondo-login{
    height: 780px;
   }
+  .imagen-usuario{
+    width: 200px;
+    height: 200px;
+    }
+
  }
 
 
