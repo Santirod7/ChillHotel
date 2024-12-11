@@ -1,48 +1,67 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useEffect } from "react";
+import Swal from "sweetalert2";
+import { useNavigate, useParams } from "react-router-dom";
+import { adjuntoUsuario, editarUsuario } from "../../../helpers/queries";
 
-const Perfil = () => {
+
+const FormularioUsuario = (editoUsuario) => {
     const {
         register,
         handleSubmit,
-        reset,
-        watch,
+        setValue,
         formState: { errors },
       } = useForm();
-    
-      const usuarioValidado = async (usuario) => {
-        const respuesta = await nuevoUsuario(usuario);
-        if (respuesta.status === 201) {
-          Swal.fire({
-            title: "Registro exitoso",
-            text: `Ya eres parte del Chill World`,
-            icon: "success",
-          });
-          setUsuarioLogueado(usuario.email)
-          reset();
-        } else {
-          Swal.fire({
-            title: "Ocurrio un error",
-            text: `No pudo ser registrado, intente esta operación en unos minutos.`,
-            icon: "error",
-          });
-          }
-          }
+
+      const {id} = useParams()
+      const navegacion = useNavigate();
+
+      useEffect(()=>{
+      
+        if(editoUsuario){
+            cargarDatosUsuario()
+        }
+      },[])
+
+      const cargarDatosUsuario = async()=>{
+        const respuesta = await adjuntoUsuario(id);
+        if(respuesta.status === 200){
+          const datoUsuario = await respuesta.json()
+          setValue('email', datoUsuario.email)
+          setValue('nombreUsuario', datoUsuario.nombreUsuario)
+          setValue('nombre', datoUsuario.nombre)
+          setValue('apellido', datoUsuario.apellido)      
+          setValue('nacionalidad', datoUsuario.nacionalidad)          
+        }
+      }
+
+          const usuarioValidado = async (usuario) => {
+            if (editoUsuario) {
+              const respuesta = await editarUsuario(usuario, id)
+              if(respuesta.status === 200){
+                Swal.fire({
+                  title: "Usuario editado correctamente",
+                  icon: "success",
+                });
+                navegacion('/perfil')
+              }else{
+                Swal.fire({
+                  title: "Ocurrio un error",
+                  text: `El usuario no pudo ser editado, intente esta operación en unos minutos.`,
+                  icon: "error",
+                });
+              }
+          };
+      };
+
 
     return (
         <section className='container-fluid min-vh-100 my-4'>
             <div>
 <div className='row w-100 justify-content-center'>
-        <div className='col-10 border align-content-center border-2 border-light bg-primary '>
-            <div className='row justify-content-center'>
-            <div className='col-12 bg-light mt-3 py-2'>
-              
-              <img className='w-100' src="https://thumbs.dreamstime.com/b/perfil-de-usuario-vectorial-avatar-predeterminado-179376714.jpg" alt=""/>
-              </div>
-            <h3 className='col-12 text-center mt-1 mb-4'>Nombre de usuario</h3>
-            </div>
-        </div>
         <div className='col-10 border border-2 border-light bg-secondary '>
+        <h1 className="text-center my-2">Ficha personal</h1>
         <Form className="container my-2 " onSubmit={handleSubmit(usuarioValidado)}>
             <Form.Group className="mt-2" controlId="formBasicEmail">
               <Form.Label>Email </Form.Label>
@@ -62,9 +81,6 @@ const Perfil = () => {
               {errors.email?.message}
               </Form.Text>
             </Form.Group>
-            <div className="row">
-                <div className="col-6">
-
             <Form.Group className="mt-2" controlId="formnombreUsuario">
               <Form.Label>Nombre de usuario</Form.Label>
               <Form.Control
@@ -88,31 +104,6 @@ const Perfil = () => {
             <Form.Text className="text-danger">
               {errors.nombreUsuario?.message}
               </Form.Text>
-                </div>
-                <div className="col-6">
-
-              <Form.Group className="mt-2" controlId="formNacionalidad">
-              <Form.Label>Nacionalidad</Form.Label>
-              <Form.Select aria-label="Selector" {...register("nacionalidad", {
-                      required: "La nacionalidad es requerida",
-                      })}
-                      aria-invalid={errors.nacionalidad ? "true" : "false"
-                      }>
-                <option value="">Seleccione su nacionalidad</option>
-                <option value="Argentina">Argentina</option>
-                <option value="Chile">Chile</option>
-                <option value="Estados Unidos">US</option>
-                <option value="Brasil">Brasil</option>
-                <option value="México">México</option>
-              </Form.Select>
-              {errors.nacionalidad && (
-          <Form.Text className="text-danger">
-            {errors.nacionalidad.message}
-          </Form.Text>
-        )}
-            </Form.Group>
-                </div>
-            </div>
             <div className="row">
               <div className="col-6">
                 <Form.Group className="mt-2" controlId="formNombre">
@@ -161,6 +152,31 @@ const Perfil = () => {
               </Form.Text>
               </div>
             </div>
+            <Form.Group className="mt-2" controlId="formNacionalidad">
+              <Form.Label>Nacionalidad</Form.Label>
+              <Form.Select aria-label="Selector" {...register("nacionalidad", {
+                      required: "La nacionalidad es requerida",
+                      })}
+                      aria-invalid={errors.nacionalidad ? "true" : "false"
+                      }>
+                <option value="">Seleccione su nacionalidad</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Chile">Chile</option>
+                <option value="Estados Unidos">US</option>
+                <option value="Brasil">Brasil</option>
+                <option value="México">México</option>
+              </Form.Select>
+              {errors.nacionalidad && (
+          <Form.Text className="text-danger">
+            {errors.nacionalidad.message}
+          </Form.Text>
+        )}
+            </Form.Group>
+            <div className="row justify-content-center">
+            <Button variant="info" type="submit" className="mt-4 text-center">
+              Editar
+            </Button>
+            </div>
           </Form>
         </div>
 </div>
@@ -172,4 +188,4 @@ const Perfil = () => {
     );
 };
 
-export default Perfil;
+export default FormularioUsuario;

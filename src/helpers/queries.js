@@ -98,7 +98,6 @@ export const leerUsuario = async()=>{
   export const adjuntoUsuario = async(id)=>{
   try {
       const respuesta = await fetch(URL+'/usuario/'+id);
-      console.log(respuesta)
       return respuesta;
   } catch (error) {
       console.error(error)

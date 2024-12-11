@@ -140,6 +140,11 @@ height: 250px;
   background-position: center;
   background-size: cover;
 }
+.img-fondo-perfil{
+  background-image: url("https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=600");
+  background-position: center;
+  background-size: cover;
+}
 .tamaño-icon-facebook{
   width: 500px;
 }

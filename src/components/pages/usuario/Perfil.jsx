@@ -1,4 +1,5 @@
 import { Button } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
 import { leerUsuario } from "../../../helpers/queries";
 import { useEffect, useState } from "react";
 
@@ -28,7 +29,7 @@ const Perfil = () => {
    }
   }
     return (
-        <section className='container-fluid min-vh-100 my-4'>
+        <section className='container-fluid min-vh-100 py-4 img-fondo-perfil'>
             <div>
 <div className='row w-100 justify-content-center'>
         <div className='col-10 border align-content-center border-2 border-light bg-primary '>
@@ -79,11 +80,11 @@ const Perfil = () => {
             <div className="row h-100">
             <div className="col-6 d-flex justify-content-start">
               <div className="align-content-center w-75">
-            <Button variant='light' className="btn-perfil">
+            <Link to={"editar/"+Usuario._id} className="btn btn-light btn-perfil">
                       <div className="d-flex justify-content-center"><i className="bi bi-lock-fill fs-3"></i>
                       </div>
 <h6 className="text-center mt-2">Privacidad</h6>
-                    </Button>
+                    </Link>
               </div>
             </div>
             <div className="col-6 d-flex justify-content-start">

@@ -14,8 +14,6 @@ const Login = ({setUsuarioLogueado}) => {
   } = useForm();
   const navegacion = useNavigate()
 
-  const emailUsuario = sessionStorage.getItem(""); // "2"
-
   const onSubmit = async (data) => {
     const respuesta = await login(data);
     try {
@@ -26,12 +24,10 @@ const Login = ({setUsuarioLogueado}) => {
           "success"
         );
         const datos = await respuesta.json();
-        console.log(datos)
         sessionStorage.setItem(
           "ChillHotel",
           JSON.stringify({ email: datos.email, token: datos.token, id: datos.id })
         );
-         //actualizar el state
         setUsuarioLogueado(datos);
         navegacion("/");
       } else {

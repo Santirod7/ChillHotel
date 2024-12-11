@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Perfil from "../components/pages/usuario/Perfil.jsx";
-import FormularioHabitaciones from "../components/pages/habitaciones/FormularioHabitaciones";
+import FormularioUsuario from "../components/pages/usuario/FormularioUsuario.jsx";
 
 const RutaUsuario = () => {
     return (
@@ -13,10 +13,9 @@ const RutaUsuario = () => {
       <Route
         path="/editar/:id"
         element={
-          <FormularioHabitaciones
-            titulo={"Editar Habitacion"}
-            estoyCreando={false}
-          ></FormularioHabitaciones>
+          <FormularioUsuario
+          editoUsuario={true}
+          ></FormularioUsuario>
         }
       ></Route>
     </Routes>
