@@ -38,12 +38,12 @@ const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
                       <Button className="py-0 ms-2">   
                       <NavDropdown title={<i className="align-content-center bi bi-person-dash"></i>} id="basic-nav-dropdown">             
                       <NavDropdown.Item ><NavLink end to="/perfil" className="text-decoration-none">Mi perfil</NavLink></NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-              Mis reservas
+              <NavDropdown.Item>
+              <NavLink end to="/*" className="text-decoration-none">Mis reservas</NavLink>
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Mis CDD</NavDropdown.Item>
+              <NavDropdown.Item ><NavLink end to="/*" className="text-decoration-none">Mis CDD</NavLink></NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4" onClick={logout}>
+              <NavDropdown.Item onClick={logout}>
                 Cerrar sesión
               </NavDropdown.Item>
             </NavDropdown>
@@ -52,12 +52,12 @@ const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
                 ):(<Button className="py-0 px-0 ms-2">   
                   <NavDropdown className="px-2" title={<i className="align-content-center bi bi-person-dash"></i>} id="basic-nav-dropdown">             
           <NavDropdown.Item ><NavLink end to="/perfil" className="text-decoration-none text-light">Mi perfil</NavLink></NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">
-          Mis reservas
+          <NavDropdown.Item>
+          <NavLink end to="/*" className="text-decoration-none">Mis reservas</NavLink>
           </NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Mis CDD</NavDropdown.Item>
+          <NavDropdown.Item ><NavLink end to="/*" className="text-decoration-none">Mis CDD</NavLink></NavDropdown.Item>
           <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4" onClick={logout}>
+          <NavDropdown.Item onClick={logout}>
             Cerrar sesión
           </NavDropdown.Item>
         </NavDropdown>

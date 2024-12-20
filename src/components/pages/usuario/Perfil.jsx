@@ -1,16 +1,28 @@
 import { Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { leerUsuario } from "../../../helpers/queries";
+import { borrarUsuario, leerUsuario } from "../../../helpers/queries";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 
-const Perfil = () => {
+const Perfil = ({setUsuarioLogueado}) => {
   const [Usuario, setUsuario] = useState([])
+  const navegacion = useNavigate();
 
   useEffect(() => {
     obtenerUsuario();
   }, []);
   const idUsuario = JSON.parse(sessionStorage.getItem("ChillHotel"));
+
+  const eliminarUsuario = async(id)=>{       
+    const respuesta = await borrarUsuario(id)
+    if(respuesta.status === 200){
+      Swal.fire({
+        title: "Cuenta eliminada",
+        text: `La cuenta fue eliminada correctamente`,
+        icon: "success",
+      })}
+      }
 
   const obtenerUsuario = async () => {
         const respuesta = await leerUsuario();
@@ -28,6 +40,27 @@ const Perfil = () => {
     });
    }
   }
+const alertadeSwal =()=>{
+Swal.fire({
+  toast: true,
+  showCancelButton: true,
+  confirmButtonText: "Borrar",
+  title: "¿Estás seguro?",
+      text: `Si confirmas, la cuenta se borrara permanentemente`,
+      icon: "warning"
+}).then((result) => {
+  if (result.isConfirmed) {
+    eliminarUsuario(idUsuario.id)
+    setUsuarioLogueado(false)
+    navegacion('/')
+    sessionStorage.removeItem("ChillHotel")
+  } else if (result.isDenied) {
+    Swal.fire("Changes are not saved", "", "info");
+  }
+})
+  };
+
+
     return (
         <section className='container-fluid min-vh-100 py-4 img-fondo-perfil'>
             <div>
@@ -89,7 +122,7 @@ const Perfil = () => {
             </div>
             <div className="col-6 d-flex justify-content-start">
               <div className="align-content-center  w-75">
-            <Button variant='danger' className="btn-perfil">
+            <Button onClick={alertadeSwal} variant='danger' className="btn-perfil">
                       <div className="d-flex justify-content-center"><i className="bi bi-trash fs-3"></i>
                       </div>
 <h6 className="text-center mt-2">Borrar cuenta</h6>

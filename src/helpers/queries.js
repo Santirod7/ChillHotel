@@ -78,7 +78,7 @@ export const nuevoUsuario = async(usuario)=>{
             },
             body: JSON.stringify(usuario)
         })
-        sessionStorage.setItem("ChillHotel", JSON.stringify(usuario.email));
+        sessionStorage.setItem("ChillHotel", JSON.stringify({email:usuario.email, id:usuario.id}));
         return respuesta
     } catch (error) {
         console.log(error)
@@ -123,7 +123,7 @@ export const leerUsuario = async()=>{
   
   export const borrarUsuario = async(id)=>{
       try {
-          const respuesta = await fetch(URL+'/'+id,{
+          const respuesta = await fetch(URL+'/usuario/'+id,{
               method: "DELETE"
           })
           return respuesta

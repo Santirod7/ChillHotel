@@ -20,12 +20,16 @@ const FormularioRegistro = ({setUsuarioLogueado}) => {
   const usuarioValidado = async (usuario) => {
       const respuesta = await nuevoUsuario(usuario);
       if (respuesta.status === 201) {
+        sessionStorage.setItem(
+          "ChillHotel",
+          JSON.stringify({ email: usuario.email, id: usuario.id })
+        );
         Swal.fire({
           title: "Registro exitoso",
           text: `Ya eres parte del Chill World`,
           icon: "success",
         });
-        setUsuarioLogueado(usuario.email)
+        setUsuarioLogueado(usuario.email, usuario.id)
         reset();
         navegacion('/')
       } else {
