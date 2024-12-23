@@ -78,7 +78,6 @@ export const nuevoUsuario = async(usuario)=>{
             },
             body: JSON.stringify(usuario)
         })
-        sessionStorage.setItem("ChillHotel", JSON.stringify({email:usuario.email, id:usuario.id}));
         return respuesta
     } catch (error) {
         console.log(error)

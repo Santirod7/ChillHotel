@@ -50,12 +50,12 @@ Swal.fire({
       icon: "warning"
 }).then((result) => {
   if (result.isConfirmed) {
-    eliminarUsuario(idUsuario.id)
-    setUsuarioLogueado(false)
-    navegacion('/')
     sessionStorage.removeItem("ChillHotel")
+    eliminarUsuario(idUsuario.id)
+    setUsuarioLogueado("")
+    navegacion('/')
   } else if (result.isDenied) {
-    Swal.fire("Changes are not saved", "", "info");
+    Swal.fire("Lo petición fue rechazada", "", "info");
   }
 })
   };

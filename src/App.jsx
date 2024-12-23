@@ -44,7 +44,7 @@ function App() {
           path="/perfil/*"
           element={
           <RutaProtegidaUsuario>
-            <RutaUsuario></RutaUsuario>
+            <RutaUsuario setUsuarioLogueado={setUsuarioLogueado}></RutaUsuario>
           </RutaProtegidaUsuario>}
         ></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
