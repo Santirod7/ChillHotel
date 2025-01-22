@@ -45,21 +45,6 @@ const Login = ({setUsuarioLogueado}) => {
       );
     }
   };
-
-
-// const recibirUsuario= async ()=>{   
-//     const respuesta = await leerUsuario();
-//     if(respuesta.status===200){
-//     const datos = await respuesta.json();
-//     setUsuarioRegistrado(datos);
-//     }else{
-//       Swal.fire({
-//         title:"En este momento no es posible iniciar sesión o registrarse",
-//          text:`Hubo un problema de nuestro lado, que imposibilita el inicio de sesión/registrarse. Intentelo más tarde`,
-//          icon:"error"
-//         });
-//    }}
-
   return (
     <article className="w-100">
     <Container>
