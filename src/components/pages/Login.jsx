@@ -1,15 +1,12 @@
 import { Form, Button, Container, Card } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { leerUsuario, login } from "../../helpers/queries";
+import { login } from "../../helpers/queries";
 import '../../App.css'
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleLogin } from '@react-oauth/google';
-import { useState, useEffect } from "react";
 
 const Login = ({setUsuarioLogueado}) => {
-
-
   const {
     register,
     handleSubmit,
@@ -17,46 +14,37 @@ const Login = ({setUsuarioLogueado}) => {
   } = useForm();
   const navegacion = useNavigate()
 
-  const onSubmit = (data) => {
-
-    if(login(data, usuarioRegistrado)){
-      Swal.fire({
-        title: "Bienvenido",
-        text: `Este es tu panel de administración de Chill Hotel`,
-        icon: "success",
-      });
-      setUsuarioLogueado(data.email)
-      navegacion('/')
-    }else{
-      Swal.fire({
-        title: "Ocurrio un error",
-        text: `Email o password incorrecto`,
-        icon: "error",
-      });
+  const onSubmit = async (data) => {
+    const respuesta = await login(data);
+    try {
+      if (respuesta.status === 200) {
+        Swal.fire(
+          "¡Bienvenido!",
+          "Has iniciado sesión correctamente",
+          "success"
+        );
+        const datos = await respuesta.json();
+        sessionStorage.setItem(
+          "ChillHotel",
+          JSON.stringify({ email: datos.email, token: datos.token, id: datos.id })
+        );
+        setUsuarioLogueado(datos);
+        navegacion("/");
+      } else {
+        Swal.fire(
+          "Ocurrió un error",
+          "Correo o contraseña incorrectos",
+          "error"
+        );
+      }
+    } catch (error) {
+      Swal.fire(
+        "Ocurrió un error",
+        "Ocurrió un error,intentalo en unos minutos",
+        "error"
+      );
     }
   };
-
-  const [usuarioRegistrado,setUsuarioRegistrado] = useState([])
-
-  useEffect(()=>{
-  recibirUsuario();
-  },[])
-
-  const recibirUsuario= async ()=>{
-    
-    const respuesta = await leerUsuario();
-    if(respuesta.status===200){
-  
-    const datos = await respuesta.json();
-    setUsuarioRegistrado(datos);
-    }else{
-      Swal.fire({
-        title:"ocurrio un error ",
-         text:`no se pudo obtener el listado de Habitaciones,intente en unos minutos..`,
-         icon:"error"
-        });
-   }}
-
   return (
     <article className="w-100">
     <Container>

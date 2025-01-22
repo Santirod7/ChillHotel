@@ -1,8 +1,10 @@
 export const URL = import.meta.env.VITE_API;
+export const EmailAdmin = import.meta.env.VITE_ADMIN_EMAIL;
+export const passwordAdmin = import.meta.env.VITE_ADMIN_PASSWORD;
 
 export const crearHabitacionesAPI = async(HabitacionNueva)=>{
   try {
-      const respuesta = await fetch(URL+'/habitaciones/',{
+      const respuesta = await fetch(URL+'/habitaciones',{
           method: "POST",
           headers: {
               "Content-Type":"application/json",
@@ -18,7 +20,7 @@ export const crearHabitacionesAPI = async(HabitacionNueva)=>{
 
 export const leerHabitacionesAPI = async()=>{
   try {
-      const respuesta = await fetch(URL+'/habitaciones/');
+      const respuesta = await fetch(URL+'/habitaciones');
       return respuesta;
   } catch (error) {
       console.error(error)
@@ -76,7 +78,6 @@ export const nuevoUsuario = async(usuario)=>{
             },
             body: JSON.stringify(usuario)
         })
-        sessionStorage.setItem("ChillHotel", JSON.stringify(usuario.email));
         return respuesta
     } catch (error) {
         console.log(error)
@@ -121,7 +122,7 @@ export const leerUsuario = async()=>{
   
   export const borrarUsuario = async(id)=>{
       try {
-          const respuesta = await fetch(URL+'/'+id,{
+          const respuesta = await fetch(URL+'/usuario/'+id,{
               method: "DELETE"
           })
           return respuesta
@@ -132,19 +133,23 @@ export const leerUsuario = async()=>{
   }
 
   export const userAdmin = {
-    email: "admin@ChillHotel.com",
-    password: "ChillHotel2024",
+    email: `${EmailAdmin}`,
+    password: `${passwordAdmin}`,
   };
   
-export const login = (usuario, usuarioRegistrado) => {
-  if (
-      usuario.email === userAdmin.email &&
-      usuario.password === userAdmin.password
-   || usuarioRegistrado.filter((usuarioRegistrado)=>usuarioRegistrado.email === usuario.email ) && usuarioRegistrado.filter((usuarioRegistrado)=>usuarioRegistrado.email === usuario.email)) {
-      sessionStorage.setItem("ChillHotel", JSON.stringify(usuario.email));
-      return true;
-    } else {
-      return false;
+  export const login = async (usuario) =>{
+    try {
+      const respuesta = await fetch(URL+'/ingreso', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(usuario),
+      });
+      return  respuesta
+    } catch (error) {
+      console.error(error);
+      return { error: "Error en el login" };
     }
-  };
+  }
 

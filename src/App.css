@@ -12,10 +12,18 @@
 }
 
 .FormularioIndex {
-
-
   flex-grow: 1;
 }
+
+.imagen-usuario{
+width: 250px;
+height: 250px;
+}
+
+ .public-perfil{
+  height: 300px;
+  object-fit: cover;
+ } 
 
 .card-img-top-nueva {
   width: 100%;
@@ -73,6 +81,52 @@
   object-fit: contain;
 }
 
+.hover-admin {
+  transition: all 0.5s ease; 
+}
+
+.hover-admin:hover {
+  background-color: #007bff;
+  color: white;
+  border-radius: 25px;
+  margin-top: 20%;
+  margin-bottom:  20%;
+}
+.hover-nav {
+  transition: all 0.5s ease; 
+}
+
+.menu-link {
+  position: relative;
+  text-decoration: none; 
+  color: black; 
+}
+
+.menu-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 0.6s ease, left 0.6s ease;
+}
+
+.menu-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+
+.hover-nav:hover {
+  border-bottom: 1px;
+  color: white;
+  border-color: #007bff;
+  border-radius: 25px;
+  margin-top: 20%;
+  margin-bottom:  20%;
+}
 
 .mainSection{
     flex-grow: 1;
@@ -86,18 +140,40 @@
   background-position: center;
   background-size: cover;
 }
+.img-fondo-perfil{
+  background-image: url("https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=600");
+  background-position: center;
+  background-size: cover;
+}
 .tamaño-icon-facebook{
   width: 500px;
+}
+.modalIntruso{
+  display: block;
+  position: initial;
+}
+.btn-perfil{
+  width: 125%;
+  height: 95%;
 }
 @media (min-width: 992px) {
   .img-fondo-login{
    height: 800px;
   }
+  .imagen-usuario{
+    width: 150px;
+    height: 150px;
+    }
  }
 @media (min-width: 0px) {
   .img-fondo-login{
    height: 780px;
   }
+  .imagen-usuario{
+    width: 200px;
+    height: 200px;
+    }
+
  }
 
 

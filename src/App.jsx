@@ -11,7 +11,8 @@ import Error404 from "./components/pages/Error404";
 import { useState } from "react";
 import RutasProtegidas from "./routes/RutasProtegidas";
 import RutasAdmin from "./routes/RutasAdministrador";
-
+import RutaProtegidaUsuario from "./routes/RutaProtegidaUsuario";
+import RutaUsuario from "./routes/RutaUsuario";
 
 
 
@@ -27,8 +28,8 @@ function App() {
         ></Menu>
       <Routes>
         <Route path="/" element={<Index></Index>}></Route>
-        <Route path="/QuienesSomos" element={<QuienesSomos></QuienesSomos>}></Route>
-        <Route path="/Contactanos" element={<Contactanos></Contactanos>}></Route>
+        <Route path="/quienes-somos" element={<QuienesSomos></QuienesSomos>}></Route>
+        <Route path="/contactanos" element={<Contactanos></Contactanos>}></Route>
         <Route path="/usuario" element={<Usuario setUsuarioLogueado={setUsuarioLogueado}></Usuario>}></Route>
         <Route
           exact
@@ -37,6 +38,14 @@ function App() {
           <RutasProtegidas>
             <RutasAdmin></RutasAdmin>
           </RutasProtegidas>}
+        ></Route>
+        <Route
+          exact
+          path="/perfil/*"
+          element={
+          <RutaProtegidaUsuario>
+            <RutaUsuario setUsuarioLogueado={setUsuarioLogueado}></RutaUsuario>
+          </RutaProtegidaUsuario>}
         ></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>

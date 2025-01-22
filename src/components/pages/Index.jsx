@@ -67,7 +67,7 @@ const Index = () => {
     } else {
       Swal.fire({
         title: "ocurrio un error ",
-        text: `no se pudo obtener el listado de Habitaciones,intente en unos minutos..`,
+        text: `No se pudo obtener el listado de habitaciones,intente en unos minutos..`,
         icon: "error",
       });
     }

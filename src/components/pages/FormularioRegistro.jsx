@@ -19,7 +19,12 @@ const FormularioRegistro = ({setUsuarioLogueado}) => {
 
   const usuarioValidado = async (usuario) => {
       const respuesta = await nuevoUsuario(usuario);
+      const datosUsuario = await respuesta.json()
       if (respuesta.status === 201) {
+        sessionStorage.setItem(
+          "ChillHotel",
+          JSON.stringify({ email: datosUsuario.email, id: datosUsuario.id })
+        );
         Swal.fire({
           title: "Registro exitoso",
           text: `Ya eres parte del Chill World`,
@@ -138,18 +143,22 @@ const FormularioRegistro = ({setUsuarioLogueado}) => {
               <Form.Label>Nacionalidad</Form.Label>
               <Form.Select aria-label="Selector" {...register("nacionalidad", {
                       required: "La nacionalidad es requerida",
-                      })}>
-                <option>Seleccione su nacionalidad</option>
+                      })}
+                      aria-invalid={errors.nacionalidad ? "true" : "false"
+                      }>
+                <option value="">Seleccione su nacionalidad</option>
                 <option value="Argentina">Argentina</option>
                 <option value="Chile">Chile</option>
                 <option value="Estados Unidos">US</option>
                 <option value="Brasil">Brasil</option>
                 <option value="México">México</option>
               </Form.Select>
+              {errors.nacionalidad && (
+          <Form.Text className="text-danger">
+            {errors.nacionalidad.message}
+          </Form.Text>
+        )}
             </Form.Group>
-            <Form.Text className="text-danger">
-              {errors.nacionalidad?.message}
-              </Form.Text>
             <Form.Group className="mt-2" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control
@@ -160,7 +169,7 @@ const FormularioRegistro = ({setUsuarioLogueado}) => {
                   pattern: {
                     value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
                     message:
-                      "El password debe contener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número",
+                      "El password debe contener al menos 8 caracteres, una letra mayúscula, una letra minúscula, un número y un caracter especial",
                   },
                 })}
               />
